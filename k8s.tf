@@ -9,8 +9,8 @@ module "talos" {
 
   hcloud_token = data.bitwarden_secret.hcloud_token.value
 
-  cluster_name     = "alrimaal"
-  cluster_domain   = "alrimaal.local"
+  cluster_name     = "cluster"
+  cluster_domain   = "cluster.local"
   datacenter_name = "fsn1-dc14"
 
   output_mode_config_cluster_endpoint = "public_ip"
@@ -32,6 +32,7 @@ module "talos" {
   pod_ipv4_cidr     = "10.0.16.0/20"
   service_ipv4_cidr = "10.0.8.0/21"
 }
+
 output "talosconfig" {
   value     = module.talos.talosconfig
   sensitive = true
@@ -40,4 +41,16 @@ output "talosconfig" {
 output "kubeconfig" {
   value     = module.talos.kubeconfig
   sensitive = true
+}
+
+resource "local_file" "kubeconfig" {
+  content  = module.talos.kubeconfig
+  filename = "${path.module}/kubeconfig"
+  file_permission = "600"
+}
+
+resource "local_file" "talosconfig" {
+  content  = module.talos.talosconfig
+  filename = "${path.module}/talosconfig"
+  file_permission = "600"
 }

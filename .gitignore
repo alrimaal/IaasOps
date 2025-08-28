@@ -1,4 +1,5 @@
 kubeconfig
+kubeconfig.yaml
 talosconfig
 # Local .terraform directories
 .terraform/
