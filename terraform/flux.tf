@@ -19,8 +19,7 @@ provider "github" {
 
 
 resource "flux_bootstrap_git" "this" {
-  path               = "fluxcd"
-  log_level = "debug"
+  path               = "fluxcd/cluster/production"
   timeouts = {
     create = "1m"
     read = "1m"
