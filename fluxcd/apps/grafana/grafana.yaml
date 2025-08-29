@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: grafana
+      version: "9.*" # or whatever version you want
+      sourceRef:
+        kind: HelmRepository
+        name: grafana-chart
+        namespace: monitoring
+  values:
+    grafana:
+      persistence:
+        enabled: true
+        type: pvc
+        storageClassName: "local-path" # default for k3s
+        accessModes:
+          - ReadWriteOnce
+        size: 5Gi
