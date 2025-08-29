@@ -1,12 +1,11 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: apps
+  name: namespaces
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: namespaces
-  path: "./fluxcd/apps"
+  interval: 1h
+  path: "./cluster/production/namespaces"
   prune: true
   sourceRef:
     kind: GitRepository
