@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  path: "./cluster/production/namespaces"
+  path: "./fluxcd/cluster/production/namespaces"
   prune: true
   sourceRef:
     kind: GitRepository
