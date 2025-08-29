@@ -4,6 +4,7 @@ metadata:
   name: apps
   namespace: flux-system
 spec:
+  interval: 5m
   dependsOn:
     - name: namespaces
   path: "./fluxcd/apps"
