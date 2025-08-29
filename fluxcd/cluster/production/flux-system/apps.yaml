@@ -6,6 +6,7 @@ metadata:
 spec:
   interval: 1h
   path: "./fluxcd/apps"
+  prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
