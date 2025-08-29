@@ -5,6 +5,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  dependsOn:
-    - name: monitoring
   url: https://grafana.github.io/helm-charts
