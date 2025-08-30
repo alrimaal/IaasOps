@@ -1,17 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: grafana
+  name: prometheus-stack
   namespace: monitoring
 spec:
   interval: 5m
   chart:
     spec:
-      chart: grafana
-      version: "9.*" # or whatever version you want
+      chart: kube-prometheus-stack
+      version: "77.*" # or whatever version you want
       sourceRef:
         kind: HelmRepository
-        name: grafana-chart
+        name: prometheus-stack-chart
         namespace: flux-system
   values:
     grafana:
@@ -21,4 +21,6 @@ spec:
         storageClassName: "local-path" # default for k3s
         accessModes:
           - ReadWriteOnce
-        size: 5Gi
+        size: 20Gi
+        finalizers:
+          - kubernetes.io/pvc-protection
