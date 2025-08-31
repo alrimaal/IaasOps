@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: percona/pxc-operator
+      chart: pxc-operator
       version: "1.*" # or whatever version you want
       sourceRef:
         kind: HelmRepository

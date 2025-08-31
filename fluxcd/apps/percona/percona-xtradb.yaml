@@ -9,7 +9,7 @@ spec:
     - name: percona-operator
   chart:
     spec:
-      chart: percona/pxc-db
+      chart: pxc-db
       version: "1.*" # or whatever version you want
       sourceRef:
         kind: HelmRepository
