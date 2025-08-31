@@ -5,10 +5,10 @@ metadata:
   namespace: mysql
 spec:
   interval: 5m
+  dependsOn:
+    - name: percona-operator
   chart:
     spec:
-      dependsOn:
-        - name: percona-operator
       chart: percona/pxc-db
       version: "1.*" # or whatever version you want
       sourceRef:
