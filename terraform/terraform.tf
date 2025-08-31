@@ -13,6 +13,11 @@ terraform {
       source  = "integrations/github"
       version = ">= 6.1"
     }
+
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+      version = "2.38.0"
+    }
   }
   required_version = ">= 1.2"
 }
@@ -23,4 +28,8 @@ provider "bitwarden" {
     experimental {
       embedded_client = true
     }
+}
+
+provider "kubernetes" {
+  config_path    = local_file.kubeconfig.filename
 }

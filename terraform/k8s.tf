@@ -54,3 +54,16 @@ resource "local_file" "talosconfig" {
   filename = "${path.module}/talosconfig"
   file_permission = "600"
 }
+
+resource "kubernetes_secret" "sops_gpg" {
+  metadata {
+    name      = "sops-gpg"
+    namespace = "flux-system"
+  }
+
+  data = {
+    "sops.asc" = data.bitwarden_secret.gpg_sops_private_key.value
+  }
+
+  type = "Opaque"
+}
