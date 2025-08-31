@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: percona-operator
+  namespace: mysql
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: percona/pxc-operator
+      version: "1.*" # or whatever version you want
+      sourceRef:
+        kind: HelmRepository
+        name: percona-charts
+        namespace: flux-system
