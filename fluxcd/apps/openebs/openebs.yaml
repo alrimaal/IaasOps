@@ -19,6 +19,8 @@ spec:
     alloy:
       enabled: false
     engines:
+      lvm:
+        enabled: false
       replicated:
         mayastor:
           enabled: false
