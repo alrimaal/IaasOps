@@ -8,6 +8,7 @@ spec:
   dependsOn:
     - name: percona-operator
     - name: openebs
+      namespace: storage
   chart:
     spec:
       chart: pxc-db
