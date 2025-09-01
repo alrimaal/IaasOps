@@ -16,6 +16,8 @@ spec:
   values:
     loki:
       enabled: false
+    alloy:
+      enabled: false
     engines:
       replicated:
         mayastor:
