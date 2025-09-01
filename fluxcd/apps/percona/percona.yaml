@@ -5,6 +5,8 @@ metadata:
   namespace: mysql
 spec:
   interval: 5m
+  dependsOn:
+    - name: openebs
   chart:
     spec:
       chart: pxc-operator

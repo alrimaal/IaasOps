@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: openebs
+  namespace: storage
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: openebs
+      version: "4.*"
+      sourceRef:
+        kind: HelmRepository
+        name: openebs-charts
+        namespace: flux-system
+  values:
+    engines:
+      replicated:
+        mayastor:
+          enabled: false
