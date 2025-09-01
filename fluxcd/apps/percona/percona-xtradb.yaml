@@ -19,3 +19,6 @@ spec:
   values:
     pxc:
       clusterSecretName: percona-xtradb-secrets
+      persistence:
+        enabled: true
+        storageClass: "openebs-hostpath"
