@@ -18,15 +18,16 @@ spec:
         namespace: flux-system
 
   values:
-    users:
-      - name: grafanaUser
-        dbs:
-          - grafana
-        grants:
-          - SELECT
-          - INSERT
-          - UPDATE
-          - DELETE
-          - CREATE
-        passwordSecretRef:
-          name: grafana-mysql-secrets
+    cr:
+      users:
+        - name: grafanaUser
+          dbs:
+            - grafana
+          grants:
+            - SELECT
+            - INSERT
+            - UPDATE
+            - DELETE
+            - CREATE
+          passwordSecretRef:
+            name: grafana-mysql-secrets
