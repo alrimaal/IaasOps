@@ -23,7 +23,7 @@ module "talos" {
   control_plane_count       = 1
   control_plane_server_type = "cx22"
 
-  worker_count       = 2
+  worker_count       = 3
   worker_server_type = "cpx21"
   disable_arm = true
 
