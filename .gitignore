@@ -1,5 +1,6 @@
 kubeconfig
 kubeconfig.yaml
+talosconfig.yaml
 talosconfig
 .DS_STORE
 # Local .terraform directories

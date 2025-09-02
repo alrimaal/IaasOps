@@ -26,5 +26,5 @@ resource "flux_bootstrap_git" "this" {
     delete = "1m"
     update = "1m"
   }
-  depends_on = [ module.talos ]
+  depends_on = [ module.talos, local_file.kubeconfig, local_file.talosconfig ]
 }

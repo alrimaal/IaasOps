@@ -31,6 +31,22 @@ module "talos" {
   node_ipv4_cidr    = "10.0.1.0/24"
   pod_ipv4_cidr     = "10.0.16.0/20"
   service_ipv4_cidr = "10.0.8.0/21"
+
+  talos_worker_extra_config_patches = [
+    <<EOT
+    machine:
+      kubelet:
+        extraMounts:
+          #Default Hostpath directory
+          - destination: /var/openebs/local
+            type: bind
+            source: /var/openebs/local
+            options:
+              - rbind
+              - rshared
+              - rw
+    EOT
+    ]
 }
 
 output "talosconfig" {
@@ -45,13 +61,13 @@ output "kubeconfig" {
 
 resource "local_file" "kubeconfig" {
   content  = module.talos.kubeconfig
-  filename = "${path.module}/kubeconfig"
+  filename = "${path.module}/kubeconfig.yaml"
   file_permission = "600"
 }
 
 resource "local_file" "talosconfig" {
   content  = module.talos.talosconfig
-  filename = "${path.module}/talosconfig"
+  filename = "${path.module}/talosconfig.yaml"
   file_permission = "600"
 }
 
@@ -64,6 +80,7 @@ resource "kubernetes_secret" "sops_gpg" {
   data = {
     "sops.asc" = data.bitwarden_secret.gpg_sops_private_key.value
   }
+  depends_on = [ local_file.kubeconfig, local_file.talosconfig ]
 
   type = "Opaque"
 }
