@@ -21,11 +21,11 @@ module "talos" {
 
 
   control_plane_count       = 1
-  control_plane_server_type = "cax11"
+  control_plane_server_type = "cx22"
 
   worker_count       = 2
-  worker_server_type = "cax21"
-  disable_x86 = true
+  worker_server_type = "cpx21"
+  disable_arm = true
 
   network_ipv4_cidr = "10.0.0.0/16"
   node_ipv4_cidr    = "10.0.1.0/24"
@@ -80,7 +80,7 @@ resource "kubernetes_secret" "sops_gpg" {
   data = {
     "sops.asc" = data.bitwarden_secret.gpg_sops_private_key.value
   }
-  depends_on = [ local_file.kubeconfig, local_file.talosconfig ]
+  depends_on = [ module.talos, local_file.talosconfig ]
 
   type = "Opaque"
 }
