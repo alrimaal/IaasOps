@@ -18,6 +18,8 @@ spec:
         name: percona-charts
         namespace: flux-system
   values:
+    tls:
+      enabled: false # in favour of Cilium encryption
     pxc:
       clusterSecretName: percona-xtradb-secrets
       persistence:
