@@ -18,6 +18,8 @@ spec:
         name: percona-charts
         namespace: flux-system
   values:
+    logcollector:
+      enabled: false
     pxc:
       clusterSecretName: percona-xtradb-secrets
       persistence:
