@@ -19,10 +19,11 @@ spec:
     alloy:
       enabled: false
     engines:
-      lvm:
-        enabled: false
-      zfs:
-        enabled: false
+      local:
+        lvm:
+          enabled: false
+        zfs:
+          enabled: false
       replicated:
         mayastor:
           enabled: false
