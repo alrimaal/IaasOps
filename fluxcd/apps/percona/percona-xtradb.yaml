@@ -20,6 +20,7 @@ spec:
   values:
     logcollector:
       enabled: false
+      imagePullPolicy: Never
     pxc:
       clusterSecretName: percona-xtradb-secrets
       persistence:
