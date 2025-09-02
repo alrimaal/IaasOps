@@ -25,3 +25,15 @@ spec:
       persistence:
         enabled: true
         storageClass: "openebs-hostpath"
+    users:
+      - name: grafanaUser
+        dbs:
+          - grafana
+        grants:
+          - SELECT
+          - INSERT
+          - UPDATE
+          - DELETE
+          - CREATE
+        passwordSecretRef:
+          name: grafana-mysql-secrets

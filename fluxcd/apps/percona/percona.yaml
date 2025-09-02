@@ -16,18 +16,3 @@ spec:
         kind: HelmRepository
         name: percona-charts
         namespace: flux-system
-
-  values:
-    cr:
-      users:
-        - name: grafanaUser
-          dbs:
-            - grafana
-          grants:
-            - SELECT
-            - INSERT
-            - UPDATE
-            - DELETE
-            - CREATE
-          passwordSecretRef:
-            name: grafana-mysql-secrets
