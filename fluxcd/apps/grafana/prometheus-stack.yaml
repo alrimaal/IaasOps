@@ -19,14 +19,12 @@ spec:
         database:
           type: mysql
           host: percona-xtradb-pxc-db-haproxy.mysql.svc.cluster.local
-      env:
-        - name: GF_DATABASE_USER
-          valueFrom:
-            secretKeyRef:
-              name: grafana-mysql-secrets
-              key: database-user
-        - name: GF_DATABASE_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: grafana-mysql-secrets
-              key: database-password
+      envValueFrom:
+        GF_DATABASE_USER:
+          secretKeyRef:
+            name: grafana-mysql-secrets
+            key: database-user
+        GF_DATABASE_PASSWORD:
+          secretKeyRef:
+            name: grafana-mysql-secrets
+            key: database-password
