@@ -9,3 +9,7 @@ data "bitwarden_secret" "flux_github_token" {
 data "bitwarden_secret" "gpg_sops_private_key" {
   id = "ccdf7009-6a30-4285-a21e-b34a00b5994e"
 }
+
+data "kubectl_file_documents" "gateway_api_crds_yamls" {
+  content = file("${path.module}/gateway-crds.yaml")
+}

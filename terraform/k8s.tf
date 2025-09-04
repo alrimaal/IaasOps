@@ -9,15 +9,15 @@ module "talos" {
 
   hcloud_token = data.bitwarden_secret.hcloud_token.value
 
-  cluster_name     = "cluster"
-  cluster_domain   = "cluster.local"
+  cluster_name    = "cluster"
+  cluster_domain  = "cluster.local"
   datacenter_name = "fsn1-dc14"
 
   output_mode_config_cluster_endpoint = "public_ip"
-  firewall_use_current_ip = true
-  
+  firewall_use_current_ip             = true
+
   enable_floating_ip = true
-  enable_alias_ip = true
+  enable_alias_ip    = true
 
 
   control_plane_count       = 1
@@ -25,7 +25,7 @@ module "talos" {
 
   worker_count       = 3
   worker_server_type = "cpx21"
-  disable_arm = true
+  disable_arm        = true
 
   network_ipv4_cidr = "10.0.0.0/16"
   node_ipv4_cidr    = "10.0.1.0/24"
@@ -46,17 +46,17 @@ module "talos" {
               - rshared
               - rw
     EOT
-    ]
+  ]
 
   cilium_value_overrides = [
-    {name  = "l7proxy.enabled"
+    { name  = "l7proxy.enabled"
       value = "true"
     },
     {
       name  = "gatewayAPI.enabled"
       value = "true"
     }
-     ]
+  ]
 
 }
 
@@ -71,20 +71,21 @@ output "kubeconfig" {
 }
 
 resource "local_file" "kubeconfig" {
-  content  = module.talos.kubeconfig
-  filename = "${path.module}/kubeconfig.yaml"
+  content         = module.talos.kubeconfig
+  filename        = "${path.module}/kubeconfig.yaml"
   file_permission = "600"
 }
 
 resource "local_file" "talosconfig" {
-  content  = module.talos.talosconfig
-  filename = "${path.module}/talosconfig.yaml"
+  content         = module.talos.talosconfig
+  filename        = "${path.module}/talosconfig.yaml"
   file_permission = "600"
 }
 
 resource "kubectl_manifest" "gateway_api_crds" {
-  yaml_body = file("${path.module}/gateway-crds.yaml")
-  depends_on = [ module.talos, local_file.kubeconfig ]
+  for_each   = data.kubectl_file_documents.gateway_api_crds_yamls.manifests
+  yaml_body  = each.value
+  depends_on = [module.talos, local_file.kubeconfig]
 }
 
 resource "kubernetes_secret" "sops_gpg" {
@@ -96,7 +97,7 @@ resource "kubernetes_secret" "sops_gpg" {
   data = {
     "sops.asc" = data.bitwarden_secret.gpg_sops_private_key.value
   }
-  depends_on = [ module.talos, local_file.talosconfig ]
+  depends_on = [module.talos, local_file.talosconfig]
 
   type = "Opaque"
 }
