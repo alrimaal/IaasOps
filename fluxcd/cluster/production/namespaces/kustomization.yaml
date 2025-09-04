@@ -4,3 +4,4 @@ resources:
   - monitoring.yaml
   - mysql.yaml
   - storage.yaml
+  - cilium-gateway.yaml

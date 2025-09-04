@@ -48,7 +48,7 @@ module "talos" {
     EOT
     ]
 
-  cilium_set_values = [
+  cilium_value_overrides = [
     {name  = "l7proxy.enabled"
       value = "true"
     },
