@@ -7,7 +7,7 @@ spec:
   interval: 5m
   dependsOn:
     - name: namespaces
-  path: "./fluxcd/gateway"
+  path: "./fluxcd/cluster/production/gateway"
   prune: true
   sourceRef:
     kind: GitRepository
