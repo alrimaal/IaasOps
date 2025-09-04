@@ -18,6 +18,11 @@ terraform {
       source = "hashicorp/kubernetes"
       version = "2.38.0"
     }
+
+    kubectl = {
+      source = "gavinbunney/kubectl"
+      version = "1.19.0"
+    }
   }
   required_version = ">= 1.2"
 }
@@ -32,4 +37,8 @@ provider "bitwarden" {
 
 provider "kubernetes" {
   config_path    = local_file.kubeconfig.filename
+}
+
+provider "kubectl" {
+  load_config_file = true
 }

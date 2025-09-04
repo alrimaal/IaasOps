@@ -47,6 +47,17 @@ module "talos" {
               - rw
     EOT
     ]
+
+  cilium_set_values = [
+    {name  = "l7proxy.enabled"
+      value = "true"
+    },
+    {
+      name  = "gatewayAPI.enabled"
+      value = "true"
+    }
+     ]
+
 }
 
 output "talosconfig" {
@@ -69,6 +80,11 @@ resource "local_file" "talosconfig" {
   content  = module.talos.talosconfig
   filename = "${path.module}/talosconfig.yaml"
   file_permission = "600"
+}
+
+resource "kubectl_manifest" "gateway_api_crds" {
+  yaml_body = file("${path.module}/gateway-crds.yaml")
+  depends_on = [ module.talos, local_file.kubeconfig ]
 }
 
 resource "kubernetes_secret" "sops_gpg" {
