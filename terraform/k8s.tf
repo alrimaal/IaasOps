@@ -55,6 +55,10 @@ module "talos" {
     {
       name  = "gatewayAPI.enabled"
       value = "true"
+    },
+    {
+      name  = "kubeProxyReplacement"
+      value = "true"
     }
   ]
 
@@ -85,6 +89,11 @@ resource "local_file" "talosconfig" {
 resource "kubectl_manifest" "gateway_api_crds" {
   for_each   = data.kubectl_file_documents.gateway_api_crds_yamls.manifests
   yaml_body  = each.value
+  depends_on = [module.talos, local_file.kubeconfig]
+}
+
+resource "kubectl_manifest" "gateway_api_tlsroute" {
+  yaml_body  = file("${path.module}/gateway-api-tlsroute-crd.yaml")
   depends_on = [module.talos, local_file.kubeconfig]
 }
 

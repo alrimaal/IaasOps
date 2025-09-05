@@ -5,6 +5,9 @@ metadata:
   namespace: cilium-gateway
 spec:
   gatewayClassName: cilium
+  infrastructure:
+    annotations:
+      load-balancer.hetzner.cloud/location: fsn1
   listeners:
     - name: http
       protocol: HTTP
