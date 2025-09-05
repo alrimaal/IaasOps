@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - gateway-class.yaml
   - gateway.yaml
-  - http.yaml
+  - grafana-http.yaml
