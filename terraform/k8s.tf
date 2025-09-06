@@ -15,6 +15,15 @@ module "talos" {
 
   output_mode_config_cluster_endpoint = "public_ip"
   firewall_use_current_ip             = true
+  extra_firewall_rules = [
+    {
+      direction   = "in"
+      protocol    = "tcp"
+      port        = "30178"
+      source_ips  = ["10.0.0.0/8"]
+      description = "Allow access to NodePort services within private network (for load balancer)"
+    }
+  ]
 
   enable_floating_ip = true
   enable_alias_ip    = true
