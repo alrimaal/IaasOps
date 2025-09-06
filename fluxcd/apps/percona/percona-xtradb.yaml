@@ -37,6 +37,7 @@ spec:
           - CREATE
           - DROP
           - INDEX
+          - ALTER
         passwordSecretRef:
           name: grafana-mysql-secrets
           key: database-password
