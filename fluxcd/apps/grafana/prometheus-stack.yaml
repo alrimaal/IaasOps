@@ -19,6 +19,7 @@ spec:
         database:
           type: mysql
           host: percona-xtradb-pxc-db-haproxy.mysql.svc.cluster.local
+          migration_locking: false
       envValueFrom:
         GF_DATABASE_USER:
           secretKeyRef:
