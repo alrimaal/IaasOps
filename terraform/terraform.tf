@@ -5,7 +5,7 @@ terraform {
       version = ">= 0.15.0"
     }
     flux = {
-      source = "fluxcd/flux"
+      source  = "fluxcd/flux"
       version = "1.6.4"
     }
 
@@ -15,12 +15,12 @@ terraform {
     }
 
     kubernetes = {
-      source = "hashicorp/kubernetes"
+      source  = "hashicorp/kubernetes"
       version = "2.38.0"
     }
 
     kubectl = {
-      source = "gavinbunney/kubectl"
+      source  = "gavinbunney/kubectl"
       version = "1.19.0"
     }
   }
@@ -28,17 +28,13 @@ terraform {
 }
 
 provider "bitwarden" {
-    server = "https://vault.bitwarden.eu"
+  server = "https://vault.bitwarden.eu"
 
-    experimental {
-      embedded_client = true
-    }
+  experimental {
+    embedded_client = true
+  }
 }
 
 provider "kubernetes" {
-  config_path    = local_file.kubeconfig.filename
-}
-
-provider "kubectl" {
-  load_config_file = true
+  config_path = local_file.kubeconfig.filename
 }

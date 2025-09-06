@@ -3,9 +3,11 @@ module "talos" {
   version = "2.16.0"
 
   # Use versions compatible with each other and supported by the module/Talos
-  talos_version      = "v1.10.0"
-  kubernetes_version = "1.30.3"
-  cilium_version     = "1.16.2"
+  talos_version             = "v1.10.0"
+  kubernetes_version        = "1.30.3"
+  cilium_version            = "1.16.2"
+  cilium_enable_gateway_api = true
+  cilium_enable_encryption  = true
 
   hcloud_token = data.bitwarden_secret.hcloud_token.value
 
@@ -57,20 +59,6 @@ module "talos" {
     EOT
   ]
 
-  cilium_value_overrides = [
-    { name  = "l7proxy.enabled"
-      value = "true"
-    },
-    {
-      name  = "gatewayAPI.enabled"
-      value = "true"
-    },
-    {
-      name  = "kubeProxyReplacement"
-      value = "true"
-    }
-  ]
-
 }
 
 output "talosconfig" {
@@ -93,17 +81,6 @@ resource "local_file" "talosconfig" {
   content         = module.talos.talosconfig
   filename        = "${path.module}/talosconfig.yaml"
   file_permission = "600"
-}
-
-resource "kubectl_manifest" "gateway_api_crds" {
-  for_each   = data.kubectl_file_documents.gateway_api_crds_yamls.manifests
-  yaml_body  = each.value
-  depends_on = [module.talos, local_file.kubeconfig]
-}
-
-resource "kubectl_manifest" "gateway_api_tlsroute" {
-  yaml_body  = file("${path.module}/gateway-api-tlsroute-crd.yaml")
-  depends_on = [module.talos, local_file.kubeconfig]
 }
 
 resource "kubernetes_secret" "sops_gpg" {
