@@ -37,3 +37,4 @@ spec:
           - CREATE
         passwordSecretRef:
           name: grafana-mysql-secrets
+          key: database-password
