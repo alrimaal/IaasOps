@@ -18,5 +18,7 @@ spec:
     crds:
       enabled: true
       keep: true
+    featureGates:
+      ExperimentalGatewayAPISupport: true
     extraArgs:
       - --feature-gates=ExperimentalGatewayAPISupport=true
