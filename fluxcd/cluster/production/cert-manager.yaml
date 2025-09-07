@@ -6,6 +6,8 @@ metadata:
 spec:
   interval: 5m
   path: "./fluxcd/cluster/production/certmanager"
+  dependsOn:
+    - name: namespaces
   prune: true
   sourceRef:
     kind: GitRepository
