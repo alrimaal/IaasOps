@@ -19,3 +19,4 @@ spec:
       keep: true
     extraArgs:
       - --feature-gates=ExperimentalGatewayAPISupport=true
+      - --enable-gateway-api
