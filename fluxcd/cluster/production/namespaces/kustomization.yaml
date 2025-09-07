@@ -6,4 +6,3 @@ resources:
   - storage.yaml
   - cilium-gateway.yaml
   - cert-manager.yaml
-  - cluster-issuer.yaml
