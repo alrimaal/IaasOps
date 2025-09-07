@@ -14,7 +14,6 @@ spec:
         name: cert-manager
         namespace: flux-system
   values:
-    enableGatewayAPI: true
     crds:
       enabled: true
       keep: true
