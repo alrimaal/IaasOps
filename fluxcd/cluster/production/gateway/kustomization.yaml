@@ -4,3 +4,4 @@ resources:
   - gateway-class.yaml
   - gateway.yaml
   - grafana-http.yaml
+  - http-redirect.yaml

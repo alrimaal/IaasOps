@@ -4,3 +4,4 @@ resources:
   - prometheus-stack-charts.yaml
   - percona-charts.yaml
   - openebs-charts.yaml
+  - certmanager-charts.yaml

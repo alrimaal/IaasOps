@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cert-manager
+  namespace: cert-manager
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: cert-manager
+      version: "1.18.*"
+      sourceRef:
+        kind: OCIRepository
+        name: cert-manager
+        namespace: flux-system
+  values:
+    installCRDs: true
+    extraArgs:
+      - --feature-gates=ExperimentalGatewayAPISupport=true

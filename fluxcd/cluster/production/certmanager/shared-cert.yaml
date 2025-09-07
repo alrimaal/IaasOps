@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: shared-cert
+  namespace: cilium-gateway
+spec:
+  secretName: shared-cert-tls
+  dnsNames:
+    - grafana.intern.alrimaal.com
+  issuerRef:
+    name: letsencrypt-gateway
+    kind: ClusterIssuer

@@ -7,6 +7,8 @@ spec:
   parentRefs:
     - name: default-gateway
       namespace: cilium-gateway
+  hostnames:
+    - "grafana.intern.alrimaal.com"
   rules:
     - matches:
         - path:
