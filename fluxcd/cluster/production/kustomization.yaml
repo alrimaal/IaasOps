@@ -7,3 +7,4 @@ resources:
   - charts.yaml
   - apps.yaml
   - gateway.yaml
+  - cert-manager.yaml
