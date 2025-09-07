@@ -1,8 +1,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: OCIRepository
+kind: HelmRepository
 metadata:
   name: cert-manager
   namespace: flux-system
 spec:
+  type: oci
   interval: 5m
   url: oci://quay.io/jetstack/charts

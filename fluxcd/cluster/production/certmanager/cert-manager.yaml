@@ -10,7 +10,7 @@ spec:
       chart: cert-manager
       version: "1.18.*"
       sourceRef:
-        kind: OCIRepository
+        kind: HelmRepository
         name: cert-manager
         namespace: flux-system
   values:
