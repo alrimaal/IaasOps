@@ -11,16 +11,6 @@ spec:
   hostnames:
     - grafana.intern.alrimaal.com
   rules:
-    # 1. ACME challenge path (exempt from redirect)
-    - matches:
-        - path:
-            type: PathPrefix
-            value: "/.well-known/acme-challenge/"
-      forwardTo:
-        - serviceName: cert-manager-http-solver
-          port: 8089 # usually the solver service port
-
-    # 2. All other HTTP traffic → redirect to HTTPS
     - matches:
         - path:
             type: PathPrefix
@@ -31,6 +21,3 @@ spec:
             scheme: "https"
             port: 443
             statusCode: 301
-      forwardTo:
-        - serviceName: grafana
-          port: 3000
