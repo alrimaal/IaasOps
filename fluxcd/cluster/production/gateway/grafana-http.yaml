@@ -7,14 +7,11 @@ spec:
   parentRefs:
     - name: default-gateway
       namespace: cilium-gateway
+      sectionName: https
   hostnames:
     - "grafana.intern.alrimaal.com"
   rules:
-    - matches:
-        - path:
-            type: PathPrefix
-            value: /
-      backendRefs:
+    - backendRefs:
         - name: prometheus-stack-grafana
           namespace: monitoring
           port: 80

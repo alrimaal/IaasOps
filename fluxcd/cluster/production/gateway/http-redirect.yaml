@@ -11,11 +11,7 @@ spec:
   hostnames:
     - grafana.intern.alrimaal.com
   rules:
-    - matches:
-        - path:
-            type: PathPrefix
-            value: "/"
-      filters:
+    - filters:
         - type: RequestRedirect
           requestRedirect:
             scheme: "https"
