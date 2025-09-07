@@ -15,10 +15,7 @@ spec:
       port: 80
       allowedRoutes:
         namespaces:
-          from: Selector
-          selector:
-            matchLabels:
-              gateway-access: "true"
+          from: All
     - name: https
       protocol: HTTPS
       port: 443
@@ -29,7 +26,4 @@ spec:
             name: shared-cert-tls
       allowedRoutes:
         namespaces:
-          from: Selector
-          selector:
-            matchLabels:
-              gateway-access: "true"
+          from: All
