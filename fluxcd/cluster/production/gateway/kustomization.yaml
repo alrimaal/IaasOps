@@ -5,3 +5,4 @@ resources:
   - gateway.yaml
   - grafana-http.yaml
   - http-redirect.yaml
+  - shared-cert.yaml
