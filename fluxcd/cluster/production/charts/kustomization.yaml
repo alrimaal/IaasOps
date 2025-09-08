@@ -5,3 +5,4 @@ resources:
   - percona-charts.yaml
   - openebs-charts.yaml
   - certmanager-charts.yaml
+  - minio-charts.yaml
