@@ -7,6 +7,8 @@ spec:
   secretName: shared-cert-tls
   dnsNames:
     - grafana.intern.alrimaal.com
+    - minio.intern.alrimaal.com
+    - minio.alrimaal.com
   issuerRef:
     name: letsencrypt-gateway
     kind: ClusterIssuer

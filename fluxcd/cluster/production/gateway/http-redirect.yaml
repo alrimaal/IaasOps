@@ -10,6 +10,8 @@ spec:
       sectionName: http
   hostnames:
     - grafana.intern.alrimaal.com
+    - minio.intern.alrimaal.com
+    - minio.alrimaal.com
   rules:
     - filters:
         - type: RequestRedirect

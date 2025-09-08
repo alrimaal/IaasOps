@@ -7,3 +7,5 @@ resources:
   - http-redirect.yaml
   - shared-cert.yaml
   - cluster-issuer.yaml
+  - minio-http.yaml
+  - minio-console-http.yaml
