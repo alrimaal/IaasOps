@@ -7,3 +7,4 @@ resources:
   - cilium-gateway.yaml
   - cert-manager.yaml
   - minio.yaml
+  - minio-tenant.yaml
