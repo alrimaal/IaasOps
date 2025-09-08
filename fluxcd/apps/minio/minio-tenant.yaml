@@ -36,5 +36,5 @@ spec:
       configuration:
         name: custom-minio-user
       configSecret:
-        existingSecret:
-          name: custom-minio-user
+        name: custom-minio-user
+        existingSecret: true
