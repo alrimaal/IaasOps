@@ -17,6 +17,7 @@ spec:
     tenant:
       pools:
         - servers: 2
+          name: main-pool
           volumesPerServer: 1
           storageClassName: "openebs-hostpath"
           size: 10Gi
