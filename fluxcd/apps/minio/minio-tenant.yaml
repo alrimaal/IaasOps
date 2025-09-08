@@ -34,4 +34,7 @@ spec:
       certificate:
         requestAutoCert: false
       configuration:
-        name: custom-minio-user.yaml
+        name: custom-minio-user
+      secrets:
+        existingSecret:
+          name: custom-minio-user
