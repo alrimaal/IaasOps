@@ -12,6 +12,6 @@ spec:
     - "minio.alrimaal.com"
   rules:
     - backendRefs:
-        - name: minio-hl
+        - name: myminio-hl
           namespace: minio-tenant
           port: 9000

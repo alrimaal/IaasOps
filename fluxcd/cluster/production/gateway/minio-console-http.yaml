@@ -12,6 +12,6 @@ spec:
     - "minio.intern.alrimaal.com"
   rules:
     - backendRefs:
-        - name: minio-console
+        - name: myminio-console
           namespace: minio-tenant
           port: 9090
