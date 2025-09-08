@@ -35,6 +35,6 @@ spec:
         requestAutoCert: false
       configuration:
         name: custom-minio-user
-      secrets:
+      configSecret:
         existingSecret:
           name: custom-minio-user
