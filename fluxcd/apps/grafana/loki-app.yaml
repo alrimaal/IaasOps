@@ -41,11 +41,9 @@ spec:
           ruler: loki-ruler
           admin: loki-admin
         s3:
-          s3: "s3://myminio-hl.minio-tenant.svc.cluster.local:9000"
+          s3: "s3://${LOKI_MINIO_USERNAME}:${LOKI_MINIO_PASSWORD}@myminio-hl.minio-tenant.svc.cluster.local:9000"
           endpoint: "http://myminio-hl.minio-tenant.svc.cluster.local:9000"
           s3ForcePathStyle: true
-          accessKeyId: ${LOKI_MINIO_USERNAME}
-          secretAccessKey: ${LOKI_MINIO_PASSWORD}
           insecure: true
           region: null
           sse_encryption: false
@@ -89,8 +87,9 @@ spec:
       replicas: 0
     bloomGateway:
       replicas: 0
-    extraArgs:
-      - -config.expand-env=true
-    extraEnvFrom:
-      - secretRef:
-          name: loki-secrets
+    global:
+      extraArgs:
+        - -config.expand-env=true
+      extraEnvFrom:
+        - secretRef:
+            name: loki-secrets
