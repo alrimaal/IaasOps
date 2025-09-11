@@ -95,6 +95,6 @@ spec:
         - secretRef:
             name: loki-secrets
     resultsCache:
-      enabled: false
+      allocatedMemory: 500
     chunksCache:
-      enabled: false
+      allocatedMemory: 500
