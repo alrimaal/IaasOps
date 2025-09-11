@@ -96,6 +96,13 @@ spec:
       extraEnvFrom:
         - secretRef:
             name: loki-secrets
+          tableManager:
+      extraVolumes:
+        - name: data
+          emptyDir: {}
+      extraVolumeMounts:
+        - name: data
+          mountPath: /var/loki
     resultsCache:
       allocatedMemory: 500
     chunksCache:
