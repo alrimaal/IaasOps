@@ -98,3 +98,10 @@ spec:
       allocatedMemory: 500
     chunksCache:
       allocatedMemory: 500
+    tableManager:
+      extraVolumes:
+        - name: data
+          emptyDir: {}
+      extraVolumeMounts:
+        - name: data
+          mountPath: /var/loki
