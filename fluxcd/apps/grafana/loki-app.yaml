@@ -89,6 +89,8 @@ spec:
       replicas: 0
     bloomGateway:
       replicas: 0
+    extraArgs:
+      - -config.expand-env=true
     extraEnvFrom:
       - secretRef:
           name: loki-secrets
