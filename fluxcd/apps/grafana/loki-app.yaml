@@ -67,6 +67,11 @@ spec:
       extraVolumeMounts:
         - name: data
           mountPath: /var/loki
+      extraArgs:
+        - -config.expand-env=true
+      extraEnvFrom:
+        - secretRef:
+            name: loki-secrets
 
     # Zero out replica counts of other deployment modes
     backend:
@@ -94,12 +99,6 @@ spec:
       replicas: 0
     bloomGateway:
       replicas: 0
-    global:
-      extraArgs:
-        - -config.expand-env=true
-      extraEnvFrom:
-        - secretRef:
-            name: loki-secrets
     resultsCache:
       allocatedMemory: 500
     chunksCache:
