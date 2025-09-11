@@ -16,6 +16,8 @@ spec:
         namespace: flux-system
   values:
     loki:
+      ingester:
+        max_chunk_age: 2m
       auth_enabled: false
       commonConfig:
         replication_factor: 1
