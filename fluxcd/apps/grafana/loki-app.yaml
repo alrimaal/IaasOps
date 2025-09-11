@@ -60,9 +60,13 @@ spec:
 
     singleBinary:
       persistence:
-        enabled: true
-        size: 1Gi
-        storageClass: "openebs-hostpath"
+        enabled: false
+      extraVolumes:
+        - name: data
+          emptyDir: {}
+      extraVolumeMounts:
+        - name: data
+          mountPath: /var/loki
 
     # Zero out replica counts of other deployment modes
     backend:
@@ -96,13 +100,6 @@ spec:
       extraEnvFrom:
         - secretRef:
             name: loki-secrets
-          tableManager:
-      extraVolumes:
-        - name: data
-          emptyDir: {}
-      extraVolumeMounts:
-        - name: data
-          mountPath: /var/loki
     resultsCache:
       allocatedMemory: 500
     chunksCache:
