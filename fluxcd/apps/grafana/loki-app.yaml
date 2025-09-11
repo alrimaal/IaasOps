@@ -63,7 +63,8 @@ spec:
     singleBinary:
       persistence:
         enabled: true
-        storageClass: openebs-hostpath
+        storageClass: "openebs-hostpath"
+        size: 1Gi
       extraArgs:
         - -config.expand-env=true
       extraEnvFrom:
