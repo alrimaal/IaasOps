@@ -94,3 +94,7 @@ spec:
       extraEnvFrom:
         - secretRef:
             name: loki-secrets
+    resultsCache:
+      enabled: false
+    chunksCache:
+      enabled: false
