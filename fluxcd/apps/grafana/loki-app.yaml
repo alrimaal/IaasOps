@@ -17,7 +17,7 @@ spec:
   values:
     loki:
       ingester:
-        max_chunk_age: 2m
+        max_chunk_age: 10m
       auth_enabled: false
       commonConfig:
         replication_factor: 1
