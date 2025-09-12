@@ -41,3 +41,18 @@ spec:
         passwordSecretRef:
           name: grafana-mysql-secrets
           key: database-password
+      - name: Ranging8739 # muzbuild
+        dbs:
+          - muzbuild_db
+        grants:
+          - SELECT
+          - INSERT
+          - UPDATE
+          - DELETE
+          - CREATE
+          - DROP
+          - INDEX
+          - ALTER
+        passwordSecretRef:
+          name: muzbuild-mysql-secrets
+          key: database-password
