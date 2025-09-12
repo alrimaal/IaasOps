@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - prometheus-stack.yaml
   - loki-app.yaml
+  - alloy.yaml
