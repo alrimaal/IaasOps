@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: muzbuild-backend
+  namespace: default
 spec:
   replicas: 3
   selector:
@@ -18,7 +19,7 @@ spec:
           image: ghcr.io/alrimaal/muzbuild:0.0.49 # {"$imagepolicy": "flux-system:muzbuild-backend"}
           imagePullPolicy: Always
           ports:
-            - containerPort: 8000
+            - containerPort: 7000
           envFrom:
             - configMapRef:
                 name: muzbuild-config-prod
