@@ -22,7 +22,7 @@ spec:
             - containerPort: 7000
           envFrom:
             - configMapRef:
-                name: muzbuild-config-prod
+                name: muzbuild-config
             - secretRef:
                 name: muzbuild-secrets
       imagePullSecrets:
