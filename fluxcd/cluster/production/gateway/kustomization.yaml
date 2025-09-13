@@ -9,3 +9,4 @@ resources:
   - cluster-issuer.yaml
   - minio-http.yaml
   - minio-console-http.yaml
+  - muzbuild-http.yaml
