@@ -25,6 +25,9 @@ spec:
       persistence:
         enabled: true
         storageClass: "openebs-hostpath"
+      configuration: |
+        [mysqld]
+        pxc_strict_mode=PERMISSIVE
     users:
       - name: grafanaUser
         dbs:
