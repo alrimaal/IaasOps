@@ -26,4 +26,4 @@ spec:
             - secretRef:
                 name: muzbuild-secrets
       imagePullSecrets:
-        - name: registryapi
+        - name: ghcr-secrets
