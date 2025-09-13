@@ -5,7 +5,7 @@ metadata:
   namespace: default
 data:
   DEBUG: "False"
-  MINIO_ENDPOINT: "https://minio.alrimaal.com"
+  MINIO_ENDPOINT: "minio.alrimaal.com"
   MINIO_ENDPOINT_EXTERNAL: "https://minio.alrimaal.com"
   MINIO_SECURE: "True"
   DB_HOST: "percona-xtradb-pxc-db-haproxy.mysql.svc.cluster.local"
