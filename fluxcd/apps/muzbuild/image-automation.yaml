@@ -1,0 +1,10 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: muzbuild-backend
+  namespace: flux-system
+spec:
+  interval: 1m
+  image: ghcr.io/alrimaal/muzbuild
+  secretRef:
+    name: ghcr-secret

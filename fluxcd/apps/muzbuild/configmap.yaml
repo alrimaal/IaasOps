@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: muzbuild-config
+data:
+  DEBUG: "False"
+  MINIO_ENDPOINT: "https://minio.alrimaal.com"
+  MINIO_ENDPOINT_EXTERNAL: "https://minio.alrimaal.com"
+  MINIO_SECURE: "True"
+  DB_HOST: "percona-xtradb-pxc-db-haproxy.mysql.svc.cluster.local"
+  DB_NAME: "muzbuild_db"
+  DB_PORT: "3306"

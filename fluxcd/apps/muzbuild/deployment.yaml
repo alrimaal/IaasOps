@@ -1,0 +1,28 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: muzbuild-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: muzbuild-backend
+  template:
+    metadata:
+      labels:
+        app: muzbuild-backend
+    spec:
+      containers:
+        - name: muzbuild-backend
+          image: ghcr.io/alrimaal/muzbuild:0.0.49 # {"$imagepolicy": "flux-system:muzbuild-backend"}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: muzbuild-config-prod
+            - secretRef:
+                name: muzbuild-secrets
+      imagePullSecrets:
+        - name: registryapi
