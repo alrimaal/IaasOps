@@ -1,0 +1,24 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: muzbuild-frontend
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: muzbuild-frontend
+  template:
+    metadata:
+      labels:
+        app: muzbuild-frontend
+    spec:
+      containers:
+        - name: muzbuild-frontend
+          image: ghcr.io/alrimaal/muzbuild-frontend:0.0.21 # {"$imagepolicy": "flux-system:muzbuild-backend"}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 6021
+      imagePullSecrets:
+        - name: ghcr-secrets
