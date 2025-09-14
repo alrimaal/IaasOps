@@ -10,3 +10,4 @@ resources:
   - minio-http.yaml
   - minio-console-http.yaml
   - muzbuild-http.yaml
+  - muzbuild-frontend-http.yaml

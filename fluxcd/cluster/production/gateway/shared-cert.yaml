@@ -10,6 +10,7 @@ spec:
     - minio.intern.alrimaal.com
     - minio.alrimaal.com
     - api.kurdoos.app
+    - kurdoos.app
   issuerRef:
     name: letsencrypt-gateway
     kind: ClusterIssuer
