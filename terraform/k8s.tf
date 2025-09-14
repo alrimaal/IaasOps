@@ -31,7 +31,7 @@ module "talos" {
   enable_alias_ip    = true
 
 
-  control_plane_count       = 1
+  control_plane_count       = 3
   control_plane_server_type = "cx22"
 
   worker_count       = 3
