@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: muzbuild-background
-          image: ghcr.io/alrimaal/muzbuild-background:0.0.49 # {"$imagepolicy": "default:muzbuild-backend"}
+          image: ghcr.io/alrimaal/muzbuild:0.1.0 # {"$imagepolicy": "default:muzbuild-backend"}
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
