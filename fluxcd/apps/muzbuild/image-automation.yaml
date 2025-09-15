@@ -7,4 +7,4 @@ spec:
   interval: 1m
   image: ghcr.io/alrimaal/muzbuild
   secretRef:
-    name: ghcr-secret
+    name: ghcr-secrets
