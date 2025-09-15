@@ -7,6 +7,17 @@ spec:
   interval: 1m
   sourceRef:
     kind: GitRepository
-    name: muzbuild-background
+    name: flux-system
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: fluxcdbot@users.noreply.github.com
+        name: fluxcdbot
+      messageTemplate: "{{range .Changed.Changes}}{{print .OldValue}} -> {{println .NewValue}}{{end}}"
+    push:
+      branch: main
   update:
     strategy: Setters
