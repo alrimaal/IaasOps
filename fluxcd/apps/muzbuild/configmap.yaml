@@ -11,3 +11,5 @@ data:
   DB_HOST: "percona-xtradb-pxc-db-haproxy.mysql.svc.cluster.local"
   DB_NAME: "muzbuild_db"
   DB_PORT: "3306"
+  SLEEP_INTERVAL: "60" #1 min sleep for background worker
+
