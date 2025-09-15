@@ -1,0 +1,27 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: muzbuild-background
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: muzbuild-background
+  template:
+    metadata:
+      labels:
+        app: muzbuild-background
+    spec:
+      containers:
+        - name: muzbuild-background
+          image: ghcr.io/alrimaal/muzbuild-background:0.0.49 # {"$imagepolicy": "flux-system:muzbuild-backend"}
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: muzbuild-config
+            - secretRef:
+                name: muzbuild-secrets
+      imagePullSecrets:
+        - name: ghcr-secrets

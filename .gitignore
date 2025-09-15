@@ -5,7 +5,7 @@ talosconfig
 .DS_STORE
 # Local .terraform directories
 .terraform/
-
+.backups
 # .tfstate files
 *.tfstate
 *.tfstate.*
