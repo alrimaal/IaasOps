@@ -5,5 +5,4 @@ resources:
   - openebs/
   - percona/
   - minio/
-  - muzbuild/
   - muzbuild-frontend/
