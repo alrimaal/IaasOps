@@ -8,4 +8,5 @@ resources:
   - apps.yaml
   - gateway.yaml
   - cert-manager.yaml
+  - muzbuild-predeploy.yaml
   - muzbuild.yaml
