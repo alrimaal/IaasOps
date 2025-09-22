@@ -7,7 +7,7 @@ spec:
   interval: 5m
   dependsOn:
     - name: namespaces
-  path: "./fluxcd/apps/muzbuild"
+  path: "./fluxcd/apps/muzbuild/deploy"
   prune: true
   sourceRef:
     kind: GitRepository
