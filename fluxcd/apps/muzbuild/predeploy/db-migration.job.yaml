@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-migration
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: muzbuild-db-migration
+          image: ghcr.io/alrimaal/muzbuild:0.1.0 # {"$imagepolicy": "default:muzbuild-backend"}
+          command: ["python", "manage.py", "migrate", "--noinput"]
+          envFrom:
+            - configMapRef:
+                name: muzbuild-config
+            - secretRef:
+                name: muzbuild-secrets
+      imagePullSecrets:
+        - name: ghcr-secrets
