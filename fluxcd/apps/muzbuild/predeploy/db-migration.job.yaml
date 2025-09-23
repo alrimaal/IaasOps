@@ -9,7 +9,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: muzbuild-db-migration
-          image: ghcr.io/alrimaal/muzbuild:0.1.2 # {"$imagepolicy": "default:muzbuild-backend"}
+          image: ghcr.io/alrimaal/muzbuild:0.1.3 # {"$imagepolicy": "default:muzbuild-backend"}
           command: ["python", "manage.py", "migrate", "--noinput"]
           envFrom:
             - configMapRef:
