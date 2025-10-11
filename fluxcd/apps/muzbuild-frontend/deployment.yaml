@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: muzbuild-frontend
-          image: ghcr.io/alrimaal/muzbuild-frontend:0.3.4 # {"$imagepolicy": "default:muzbuild-frontend"}
+          image: ghcr.io/alrimaal/muzbuild-frontend:0.3.5 # {"$imagepolicy": "default:muzbuild-frontend"}
           imagePullPolicy: Always
           ports:
             - containerPort: 6021
