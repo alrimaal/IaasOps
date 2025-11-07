@@ -11,6 +11,7 @@ spec:
     - minio.alrimaal.com
     - api.kurdoos.app
     - kurdoos.app
+    - bunyaan.space
   issuerRef:
     name: letsencrypt-gateway
     kind: ClusterIssuer
