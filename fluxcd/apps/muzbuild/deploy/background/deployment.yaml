@@ -31,6 +31,7 @@ spec:
           volumeMounts:
             - name: apns-cert
               mountPath: /app/aps.pem
+              subpath: aps.pem
               readOnly: true
       imagePullSecrets:
         - name: ghcr-secrets
