@@ -28,5 +28,13 @@ spec:
                 name: muzbuild-config
             - secretRef:
                 name: muzbuild-secrets
+          volumeMounts:
+            - name: apns-cert
+              mountPath: /app/aps.pem
+              readOnly: true
       imagePullSecrets:
         - name: ghcr-secrets
+      volumes:
+        - name: apns-cert
+          secret:
+            secretName: muzbuild-cert-secrets
