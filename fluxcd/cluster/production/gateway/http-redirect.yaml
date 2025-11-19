@@ -15,6 +15,7 @@ spec:
     - api.kurdoos.app
     - kurdoos.app
     - bunyaan.space
+    - api.bunyaan.space
   rules:
     - filters:
         - type: RequestRedirect

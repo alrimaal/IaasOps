@@ -12,6 +12,7 @@ spec:
     - api.kurdoos.app
     - kurdoos.app
     - bunyaan.space
+    - api.bunyaan.space
   issuerRef:
     name: letsencrypt-gateway
     kind: ClusterIssuer
