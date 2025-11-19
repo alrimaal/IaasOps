@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: db-migration
+  name: caas-db-migration
   namespace: default
 spec:
   template:
