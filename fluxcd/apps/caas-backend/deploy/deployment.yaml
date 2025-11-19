@@ -1,0 +1,34 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: caas-backend
+  namespace: default
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: caas-backend
+  template:
+    metadata:
+      labels:
+        app: caas-backend
+    spec:
+      containers:
+        - name: caas-backend
+          image: ghcr.io/alrimaal/caas-backend:0.0.1 # {"$imagepolicy": "default:caas-backend"}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: caas-config
+            - secretRef:
+                name: caas-secrets
+      imagePullSecrets:
+        - name: ghcr-secrets

@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-migration
+  namespace: default
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: caas-db-migration
+          image: ghcr.io/alrimaal/caas-backend:0.0.1 # {"$imagepolicy": "default:caas-backend"}
+          command: ["python", "manage.py", "migrate", "--noinput"]
+          envFrom:
+            - configMapRef:
+                name: caas-config
+            - secretRef:
+                name: caas-secrets
+      imagePullSecrets:
+        - name: ghcr-secrets

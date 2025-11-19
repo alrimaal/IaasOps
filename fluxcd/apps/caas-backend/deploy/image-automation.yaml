@@ -1,0 +1,10 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: caas-backend
+  namespace: default
+spec:
+  interval: 1m
+  image: ghcr.io/alrimaal/caas-backend
+  secretRef:
+    name: ghcr-secrets
