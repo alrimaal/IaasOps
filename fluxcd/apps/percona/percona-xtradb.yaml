@@ -60,3 +60,19 @@ spec:
         passwordSecretRef:
           name: muzbuild-mysql-secrets
           key: database-password
+      - name: knoll6686 # caas
+        dbs:
+          - caas_db
+        grants:
+          - SELECT
+          - INSERT
+          - UPDATE
+          - DELETE
+          - CREATE
+          - DROP
+          - INDEX
+          - ALTER
+          - REFERENCES
+        passwordSecretRef:
+          name: caas-mysql-secrets
+          key: database-password
