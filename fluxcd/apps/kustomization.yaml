@@ -7,4 +7,3 @@ resources:
   - minio/
   - muzbuild-frontend/
   - caas-frontend/
-  - caas-backend/

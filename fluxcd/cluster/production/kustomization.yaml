@@ -10,3 +10,5 @@ resources:
   - cert-manager.yaml
   - muzbuild-predeploy.yaml
   - muzbuild.yaml
+  - caas-predeploy.yaml
+  - caas-backend.yaml
