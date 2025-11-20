@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: caas-backend
-          image: ghcr.io/alrimaal/caas-backend:0.0.2 # {"$imagepolicy": "default:caas-backend"}
+          image: ghcr.io/alrimaal/caas-backend:0.0.3 # {"$imagepolicy": "default:caas-backend"}
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
