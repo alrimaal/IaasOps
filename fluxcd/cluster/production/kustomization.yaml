@@ -12,3 +12,5 @@ resources:
   - muzbuild.yaml
   - caas-predeploy.yaml
   - caas-backend.yaml
+  - caas-predeploy-dev.yaml
+  - caas-backend-dev.yaml
