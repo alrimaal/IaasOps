@@ -76,3 +76,19 @@ spec:
         passwordSecretRef:
           name: caas-mysql-secrets
           key: database-password
+      - name: Cathedral6737 # caas dev
+        dbs:
+          - caas_db_dev
+        grants:
+          - SELECT
+          - INSERT
+          - UPDATE
+          - DELETE
+          - CREATE
+          - DROP
+          - INDEX
+          - ALTER
+          - REFERENCES
+        passwordSecretRef:
+          name: caas-mysql-dev-secrets
+          key: database-password
