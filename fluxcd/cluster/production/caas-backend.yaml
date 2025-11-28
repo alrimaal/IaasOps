@@ -7,7 +7,7 @@ spec:
   interval: 5m
   dependsOn:
     - name: caas-predeploy
-  path: "./fluxcd/apps/caas-backend/deploy"
+  path: "./fluxcd/apps/caas-backend/overlays/deploy"
   prune: true
   sourceRef:
     kind: GitRepository

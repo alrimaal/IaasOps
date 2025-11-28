@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: "./fluxcd/apps/caas-backend/predeploy"
+  path: "./fluxcd/apps/caas-backend/overlays/predeploy"
   prune: true
   wait: true
   force: true
