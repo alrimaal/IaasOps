@@ -8,3 +8,4 @@ resources:
   - cert-manager.yaml
   - minio.yaml
   - minio-tenant.yaml
+  - dev.yaml
