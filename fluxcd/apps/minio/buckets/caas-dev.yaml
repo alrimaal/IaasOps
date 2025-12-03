@@ -4,6 +4,7 @@ metadata:
   name: caas-dev
   namespace: minio
 spec:
+  deletionPolicy: IfEmpty
   name: caas-dev
   tenantRef:
     namespace: minio-tenant
