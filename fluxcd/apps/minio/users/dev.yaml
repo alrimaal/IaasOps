@@ -10,4 +10,4 @@ spec:
     key: secretKey
   tenantRef:
     namespace: minio-tenant
-    name: minio-tenant
+    name: myminio
