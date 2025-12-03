@@ -5,3 +5,4 @@ resources:
   - minio-tenant.yaml
   - minio-operator-ext.yaml
   - minio-operator-crds.yaml
+  - users
