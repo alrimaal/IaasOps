@@ -6,4 +6,5 @@ resources:
   - openebs-charts.yaml
   - certmanager-charts.yaml
   - minio-charts.yaml
+  - minio-operator-ext-charts.yaml
   - grafana-charts.yaml
