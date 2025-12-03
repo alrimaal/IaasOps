@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: minio-operator-ext
+  name: minio-operator-crds
   namespace: minio
 spec:
   interval: 5m
   chart:
     spec:
-      chart: operator
+      chart: crds
       version: "3.3.*"
       sourceRef:
         kind: HelmRepository

@@ -4,3 +4,4 @@ resources:
   - minio-operator.yaml
   - minio-tenant.yaml
   - minio-operator-ext.yaml
+  - minio-operator-crds.yaml
