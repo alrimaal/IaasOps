@@ -5,7 +5,7 @@ metadata:
 spec:
   accessKey: Deranged1876
   secretKeyRef:
-    name: minio-dev-user
+    name: minio-dev-user-secrets
     key: secretKey
   tenantRef:
     namespace: minio-tenant
