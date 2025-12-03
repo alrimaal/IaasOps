@@ -6,3 +6,5 @@ resources:
   - minio-operator-ext.yaml
   - minio-operator-crds.yaml
   - users
+  - buckets
+  - policy

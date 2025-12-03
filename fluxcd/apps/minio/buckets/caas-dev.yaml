@@ -1,0 +1,10 @@
+apiVersion: bfiola.dev/v1
+kind: MinioBucket
+metadata:
+  name: caas-dev
+  namespace: minio
+spec:
+  name: caas-dev
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
