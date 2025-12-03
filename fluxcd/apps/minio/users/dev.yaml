@@ -1,0 +1,12 @@
+apiVersion: bfiola.dev/v1
+kind: MinioUser
+metadata:
+  name: minio-dev-user
+spec:
+  accessKey: Deranged1876
+  secretKeyRef:
+    name: minio-dev-user
+    key: secretKey
+  tenantRef:
+    namespace: minio-tenant
+    name: minio-tenant
