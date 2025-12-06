@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - configmap.yaml
   - image-automation.yaml
-  - image-policy.yaml
   - db-migration.job.yaml
