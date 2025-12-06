@@ -5,7 +5,8 @@ metadata:
   name: caas-backend
   namespace: default
 spec:
-  spec:
-    containers:
-      - name: caas-backend
-        image: ghcr.io/alrimaal/caas-backend:0.0.5 # {"$imagepolicy": "default:caas-backend"}
+  template:
+    spec:
+      containers:
+        - name: caas-backend
+          image: ghcr.io/alrimaal/caas-backend:0.0.5 # {"$imagepolicy": "default:caas-backend"}
