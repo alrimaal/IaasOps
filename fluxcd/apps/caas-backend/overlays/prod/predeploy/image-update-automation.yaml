@@ -22,4 +22,4 @@ spec:
       branch: dev
   update:
     strategy: Setters
-    path: ./apps/caas-backend/overlays/prod/
+    path: ./fluxcd/apps/caas-backend/overlays/prod/
