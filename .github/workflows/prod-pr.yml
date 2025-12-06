@@ -1,0 +1,26 @@
+name: Create PR on dev
+
+on:
+  create:
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # Needed to push commits
+      pull-requests: write  # Needed to create PR
+
+    steps:
+      # 1️⃣ Checkout code
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          title: 'New version to prod'
+          body: 'A new version has been rolled out to dev. Accept this PR to roll out to prod'
