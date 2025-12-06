@@ -18,10 +18,10 @@ spec:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: "{{range .Changed.Changes}}{{print .OldValue}} -> {{println .NewValue}}{{end}}"
-  push:
-    branch: prod-promote/caas-backend-{{ index .Updated.Images 0 | tag }}
-    options:
-      create: true
+    push:
+      branch: prod-promote/caas-backend-{{ index .Updated.Images 0 | tag }}
+      options:
+        create: true
   update:
     strategy: Setters
     path: ./apps/caas-backend/overlays/prod/

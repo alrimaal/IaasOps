@@ -5,4 +5,4 @@ resources:
   - ../../../base/predeploy
 
 patches:
-  - path: patch-secrets.yaml
+  - path: patch-image.yaml
