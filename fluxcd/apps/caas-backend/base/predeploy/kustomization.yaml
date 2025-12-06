@@ -5,4 +5,5 @@ resources:
   - image-automation.yaml
   - image-policy.yaml
   - image-update-automation.yaml
+  - image-update-automation-prod.yaml
   - db-migration.job.yaml

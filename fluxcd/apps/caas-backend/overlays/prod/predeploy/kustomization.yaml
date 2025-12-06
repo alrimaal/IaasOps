@@ -3,3 +3,6 @@ kind: Kustomization
 
 resources:
   - ../../../base/predeploy
+
+patches:
+  - path: patch-secrets.yaml

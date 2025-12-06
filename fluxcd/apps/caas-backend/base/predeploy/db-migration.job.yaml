@@ -9,8 +9,6 @@ spec:
       restartPolicy: Never
       containers:
         - name: caas-db-migration
-          image: ghcr.io/alrimaal/caas-backend:0.0.4 # {"$imagepolicy": "default:caas-backend"}
-          command: ["python", "manage.py", "migrate", "--noinput"]
           envFrom:
             - configMapRef:
                 name: caas-config

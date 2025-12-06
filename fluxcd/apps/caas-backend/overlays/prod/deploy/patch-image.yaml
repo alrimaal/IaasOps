@@ -1,0 +1,11 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: caas-backend
+  namespace: default
+spec:
+  spec:
+    containers:
+      - name: caas-backend
+        image: ghcr.io/alrimaal/caas-backend:0.0.4 # {"$imagepolicy": "default:caas-backend"}
