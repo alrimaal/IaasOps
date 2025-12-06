@@ -1,6 +1,6 @@
 module "talos" {
   source  = "hcloud-talos/talos/hcloud"
-  version = "2.16.0"
+  version = "2.21.0"
 
   # Use versions compatible with each other and supported by the module/Talos
   talos_version             = "v1.10.0"
@@ -34,6 +34,17 @@ module "talos" {
   control_plane_count       = 3
   control_plane_server_type = "cx22"
 
+  worker_nodes = [
+    {
+      type = "cpx32"
+    },
+    {
+      type = "cpx32"
+    },
+    {
+      type = "cpx32"
+    }
+  ]
   worker_count       = 3
   worker_server_type = "cpx21"
   disable_arm        = true
