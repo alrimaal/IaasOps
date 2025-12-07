@@ -13,3 +13,4 @@ resources:
   - muzbuild-frontend-http.yaml
   - caas-frontend-http.yaml
   - caas-backend-http.yaml
+  - caas-backend-dev-http.yaml
