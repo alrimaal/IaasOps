@@ -2,10 +2,10 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: caas-backend-dev
-  namespace: default
+  namespace: dev
 spec:
   imageRepositoryRef:
-    name: caas-backend
+    name: caas-backend-dev
   policy:
     semver:
       range: 0.x.x
