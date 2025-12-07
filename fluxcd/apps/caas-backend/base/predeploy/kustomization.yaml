@@ -1,5 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - image-automation.yaml
+  - image-policy.yaml
   - configmap.yaml
   - db-migration.job.yaml

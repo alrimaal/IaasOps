@@ -6,8 +6,6 @@ resources:
   - service.yaml
   - image-automation.yaml
   - image-policy.yaml
-  - image-update-automation.yaml
   - background/deployment.yaml
   - background/image-automation.yaml
   - background/image-policy.yaml
-  - background/image-update-automation.yaml

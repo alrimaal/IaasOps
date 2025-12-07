@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
 metadata:
-  name: muzbuild-background
+  name: image-automation
   namespace: default
 spec:
   interval: 1m
