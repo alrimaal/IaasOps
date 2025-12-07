@@ -13,6 +13,7 @@ spec:
     - kurdoos.app
     - bunyaan.space
     - api.bunyaan.space
+    - bunyaandev.alrimaal.com
   issuerRef:
     name: letsencrypt-gateway
     kind: ClusterIssuer

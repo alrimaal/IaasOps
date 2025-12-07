@@ -16,6 +16,7 @@ spec:
     - kurdoos.app
     - bunyaan.space
     - api.bunyaan.space
+    - bunyaandev.alrimaal.com
   rules:
     - filters:
         - type: RequestRedirect
