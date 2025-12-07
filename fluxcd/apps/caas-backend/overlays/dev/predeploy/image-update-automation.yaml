@@ -16,7 +16,7 @@ spec:
     commit:
       author:
         email: fluxcdbot@users.noreply.github.com
-        name: fluxcdbot
+        name: fluxcdbot-dev
       messageTemplate: "{{range .Changed.Changes}}{{print .OldValue}} -> {{println .NewValue}}{{end}}"
     push:
       branch: main
