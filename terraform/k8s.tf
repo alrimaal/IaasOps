@@ -37,12 +37,6 @@ module "talos" {
   worker_nodes = [
     {
       type = "cpx32"
-    },
-    {
-      type = "cpx32"
-    },
-    {
-      type = "cpx32"
     }
   ]
   worker_count       = 3
