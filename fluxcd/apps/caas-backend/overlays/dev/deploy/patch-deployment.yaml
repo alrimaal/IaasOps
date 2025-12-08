@@ -20,3 +20,5 @@ spec:
           envFrom:
             - secretRef:
                 name: caas-dev-secrets
+            - configMapRef:
+                name: caas-config
