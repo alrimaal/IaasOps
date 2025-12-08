@@ -8,3 +8,4 @@ namespace: dev
 
 patches:
   - path: patch-secrets.yaml
+  - patch: patch-configmap.yaml
