@@ -8,3 +8,4 @@ namespace: dev
 
 patches:
   - path: patch-deployment.yaml
+  - path: patch-service.yaml

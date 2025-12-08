@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: caas-backend
+  namespace: default
+spec:
+  selector:
+    app: caas-backend-dev
