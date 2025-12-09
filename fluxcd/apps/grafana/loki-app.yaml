@@ -30,9 +30,16 @@ spec:
             index:
               prefix: loki_index_
               period: 24h
+      compactor:
+        enabled: true
+        retention_enabled: true
+        delete_request_store: s3
+        working_directory: /var/loki/compactor
+        compaction_interval: 10m
       pattern_ingester:
         enabled: true
       limits_config:
+        retention_period: 1y
         allow_structured_metadata: true
         volume_enabled: true
       ruler:
@@ -88,8 +95,6 @@ spec:
     queryScheduler:
       replicas: 0
     distributor:
-      replicas: 0
-    compactor:
       replicas: 0
     indexGateway:
       replicas: 0
