@@ -31,7 +31,6 @@ spec:
               prefix: loki_index_
               period: 24h
       compactor:
-        enabled: true
         retention_enabled: true
         delete_request_store: s3
         working_directory: /var/loki/compactor
