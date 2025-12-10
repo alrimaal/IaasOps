@@ -7,3 +7,4 @@ data:
   DB_HOST: "percona-xtradb-pxc-db-haproxy.mysql.svc.cluster.local"
   DB_PORT: "3306"
   DEBUG: "False"
+  MINIO_SECURE: "True"
