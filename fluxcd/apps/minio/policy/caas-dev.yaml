@@ -14,14 +14,14 @@ spec:
         - "s3:PutObject"
         - "s3:GetObject"
       resource:
-        - "arn:aws:s3:::bucket/*"
+        - "arn:aws:s3:::caas-dev/*"
     - effect: "Allow"
       action:
         - "s3:GetBucketLocation"
         - "s3:ListBucket"
         - "s3:ListBucketMultipartUploads"
       resource:
-        - "arn:aws:s3:::bucket"
+        - "arn:aws:s3:::caas-dev"
   tenantRef:
     namespace: minio-tenant
     name: myminio
