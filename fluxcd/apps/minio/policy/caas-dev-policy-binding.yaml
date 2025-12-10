@@ -9,4 +9,4 @@ spec:
     namespace: minio-tenant
     name: myminio
   user:
-    builtin: minio-dev-user
+    builtin: Deranged1876
