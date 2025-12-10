@@ -14,4 +14,4 @@ spec:
     - backendRefs:
         - name: argo-workflows-server
           namespace: argo
-          port: 80
+          port: 2746
