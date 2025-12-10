@@ -17,6 +17,7 @@ spec:
     - bunyaan.space
     - api.bunyaan.space
     - bunyaandev.alrimaal.com
+    - workflows.alrimaal.com
   rules:
     - filters:
         - type: RequestRedirect
