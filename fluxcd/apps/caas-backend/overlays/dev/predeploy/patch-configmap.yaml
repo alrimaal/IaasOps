@@ -5,3 +5,4 @@ metadata:
   namespace: default
 data:
   DEBUG: "True"
+  MINIO_BUCKET_NAME: "caas-dev"
