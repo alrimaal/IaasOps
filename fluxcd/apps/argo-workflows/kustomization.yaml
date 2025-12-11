@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - argo-workflows.yaml
   - read-only-role.yaml
-  - ui-user-service-account.yaml
+  - ui-service-account.yaml
   - role-binding.yaml
