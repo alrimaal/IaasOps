@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: caas-backend
-          image: ghcr.io/alrimaal/caas-backend:ephemeral-2
+          image: ghcr.io/alrimaal/caas-backend:ephemeral-3
           envFrom:
             - secretRef:
                 name: caas-dev-secrets
