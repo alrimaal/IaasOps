@@ -3,6 +3,7 @@ kind: Workflow
 metadata:
   generateName: video-transcode
   namespace: default
+  name: video-transcode-template
 spec:
   entrypoint: video-processing-pipeline
 
