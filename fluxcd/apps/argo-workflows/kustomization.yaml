@@ -5,3 +5,4 @@ resources:
   - read-only-role.yaml
   - ui-service-account.yaml
   - role-binding.yaml
+  - workflows/

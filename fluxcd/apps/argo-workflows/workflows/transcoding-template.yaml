@@ -1,0 +1,330 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: video-transcode
+  namespace: default
+spec:
+  entrypoint: video-processing-pipeline
+
+  # Arguments passed when triggering the workflow
+  arguments:
+    parameters:
+      - name: video-key
+        value: ""
+      - name: output-folder
+        value: ""
+      - name: minio-endpoint
+        value: "myminio-hl.minio-tenant.svc.cluster.local:9000"
+      - name: minio-bucket
+        value: ""
+
+  # Volumes shared across steps
+  volumes:
+    - name: workdir
+      emptyDir: {}
+
+  templates:
+    # Main pipeline orchestration
+    - name: video-processing-pipeline
+      steps:
+        - - name: download-video
+            template: download-from-minio
+        # Parallel transcoding of all quality levels
+        - - name: transcode-1080p
+            template: transcode-quality
+            arguments:
+              parameters:
+                - name: resolution
+                  value: "1920:1080"
+                - name: quality-name
+                  value: "1080p"
+                - name: video-bitrate
+                  value: "5000k"
+                - name: max-bitrate
+                  value: "5350k"
+                - name: buffer-size
+                  value: "7500k"
+                - name: audio-bitrate
+                  value: "128k"
+          - name: transcode-720p
+            template: transcode-quality
+            arguments:
+              parameters:
+                - name: resolution
+                  value: "1280:720"
+                - name: quality-name
+                  value: "720p"
+                - name: video-bitrate
+                  value: "2800k"
+                - name: max-bitrate
+                  value: "2996k"
+                - name: buffer-size
+                  value: "4200k"
+                - name: audio-bitrate
+                  value: "128k"
+          - name: transcode-480p
+            template: transcode-quality
+            arguments:
+              parameters:
+                - name: resolution
+                  value: "854:480"
+                - name: quality-name
+                  value: "480p"
+                - name: video-bitrate
+                  value: "1400k"
+                - name: max-bitrate
+                  value: "1498k"
+                - name: buffer-size
+                  value: "2100k"
+                - name: audio-bitrate
+                  value: "96k"
+          - name: transcode-360p
+            template: transcode-quality
+            arguments:
+              parameters:
+                - name: resolution
+                  value: "640:360"
+                - name: quality-name
+                  value: "360p"
+                - name: video-bitrate
+                  value: "800k"
+                - name: max-bitrate
+                  value: "856k"
+                - name: buffer-size
+                  value: "1200k"
+                - name: audio-bitrate
+                  value: "96k"
+        - - name: create-master-playlist
+            template: create-master-playlist
+        - - name: upload-processed
+            template: upload-to-minio
+        - - name: notify-completion
+            template: notify-django-backend
+
+    # Step 1: Download video from MinIO using native S3 artifact
+    - name: download-from-minio
+      inputs:
+        artifacts:
+          - name: source-video
+            path: /work/input.mp4
+            s3:
+              endpoint: "{{workflow.parameters.minio-endpoint}}"
+              bucket: "{{workflow.parameters.minio-bucket}}"
+              key: "{{workflow.parameters.video-key}}"
+              insecure: true
+              accessKeySecret:
+                name: minio-argo-user-secrets
+                key: accessKey
+              secretKeySecret:
+                name: minio-argo-user-secrets
+                key: secretKey
+      outputs:
+        artifacts:
+          - name: downloaded-video
+            path: /work/input.mp4
+      container:
+        image: busybox:latest
+        command: [sh, -c]
+        args:
+          - |
+            echo "Video downloaded successfully"
+            ls -lh /work/input.mp4
+        volumeMounts:
+          - name: workdir
+            mountPath: /work
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+
+    # Step 2: Transcode video to specific quality (parameterized template)
+    - name: transcode-quality
+      inputs:
+        parameters:
+          - name: resolution
+          - name: quality-name
+          - name: video-bitrate
+          - name: max-bitrate
+          - name: buffer-size
+          - name: audio-bitrate
+        artifacts:
+          - name: source-video
+            path: /work/input.mp4
+            from: "{{steps.download-video.outputs.artifacts.downloaded-video}}"
+      outputs:
+        artifacts:
+          - name: hls-output
+            path: /work/output/{{inputs.parameters.quality-name}}
+            archive:
+              none: {}
+      container:
+        image: jrottenberg/ffmpeg:4.4-alpine
+        command: [sh, -c]
+        args:
+          - |
+            set -e
+
+            mkdir -p /work/output/{{inputs.parameters.quality-name}}
+            cd /work/output/{{inputs.parameters.quality-name}}
+            ffmpeg -i /work/input.mp4 \
+              -vf scale=w={{inputs.parameters.resolution}}:force_original_aspect_ratio=decrease \
+              -c:a aac -ar 48000 -b:a {{inputs.parameters.audio-bitrate}} \
+              -c:v libx264 -preset slow -tune stillimage \
+              -profile:v main -level 4.0 \
+              -crf 23 \
+              -g 120 -keyint_min 48 -sc_threshold 40 \
+              -bf 3 -b_strategy 2 -refs 4 \
+              -me_method umh -subq 7 \
+              -trellis 1 -coder 1 \
+              -b:v {{inputs.parameters.video-bitrate}} \
+              -maxrate {{inputs.parameters.max-bitrate}} \
+              -bufsize {{inputs.parameters.buffer-size}} \
+              -hls_time 4 -hls_playlist_type vod \
+              -hls_segment_filename "segment_%03d.ts" \
+              -hls_flags independent_segments \
+              playlist.m3u8
+
+            echo "{{inputs.parameters.quality-name}} transcoding complete"
+            ls -lah
+        volumeMounts:
+          - name: workdir
+            mountPath: /work
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
+
+    # Step 3: Create master playlist combining all qualities
+    - name: create-master-playlist
+      inputs:
+        artifacts:
+          - name: quality-1080p
+            path: /work/output/1080p
+            from: "{{steps.transcode-1080p.outputs.artifacts.hls-output}}"
+          - name: quality-720p
+            path: /work/output/720p
+            from: "{{steps.transcode-720p.outputs.artifacts.hls-output}}"
+          - name: quality-480p
+            path: /work/output/480p
+            from: "{{steps.transcode-480p.outputs.artifacts.hls-output}}"
+          - name: quality-360p
+            path: /work/output/360p
+            from: "{{steps.transcode-360p.outputs.artifacts.hls-output}}"
+      outputs:
+        artifacts:
+          - name: final-output
+            path: /work/output
+            archive:
+              none: {}
+      container:
+        image: busybox:latest
+        command: [sh, -c]
+        args:
+          - |
+            cat > /work/output/master.m3u8 << 'EOF'
+            #EXTM3U
+            #EXT-X-VERSION:3
+            #EXT-X-STREAM-INF:BANDWIDTH=5000000,RESOLUTION=1920x1080
+            1080p/playlist.m3u8
+            #EXT-X-STREAM-INF:BANDWIDTH=2800000,RESOLUTION=1280x720
+            720p/playlist.m3u8
+            #EXT-X-STREAM-INF:BANDWIDTH=1400000,RESOLUTION=854x480
+            480p/playlist.m3u8
+            #EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=640x360
+            360p/playlist.m3u8
+            EOF
+
+            echo "Master playlist created"
+            cat /work/output/master.m3u8
+            echo ""
+            echo "Directory structure:"
+            find /work/output -type f | head -20
+        volumeMounts:
+          - name: workdir
+            mountPath: /work
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+
+    # Step 4: Upload processed files to MinIO using native S3 artifact
+    - name: upload-to-minio
+      inputs:
+        artifacts:
+          - name: processed-video
+            path: /work/output
+            from: "{{steps.create-master-playlist.outputs.artifacts.final-output}}"
+      container:
+        image: minio/mc:latest
+        command: [sh, -c]
+        args:
+          - |
+            mc alias set myminio http://{{workflow.parameters.minio-endpoint}} $MINIO_ACCESS_KEY $MINIO_SECRET_KEY
+            mc mb -p myminio/{{workflow.parameters.minio-bucket}} || true
+            mc cp --recursive /work/output/ myminio/{{workflow.parameters.minio-bucket}}/{{workflow.parameters.output-folder}}/
+
+            # Set public read policy for CDN access
+            mc anonymous set download myminio/{{workflow.parameters.minio-bucket}}/{{workflow.parameters.output-folder}}
+
+            echo "Upload complete"
+            echo "Master playlist URL: http://{{workflow.parameters.minio-endpoint}}/{{workflow.parameters.minio-bucket}}/{{workflow.parameters.output-folder}}/master.m3u8"
+        env:
+          - name: MINIO_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: minio-argo-user-secrets
+                key: accessKey
+          - name: MINIO_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: minio-argo-user-secrets
+                key: secretKey
+        volumeMounts:
+          - name: workdir
+            mountPath: /work
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+
+    # Step 5: Notify Django backend of completion
+    - name: notify-django-backend
+      container:
+        image: curlimages/curl:latest
+        command: [sh, -c]
+        args:
+          - |
+            curl -X POST http://caas-backend.dev.svc.cluster.local:80/api/mark-video-processed/ \
+              -H "Content-Type: application/json" \
+              -H "Authorization: Bearer $API_TOKEN" \
+              -d '{
+                "video_id": "{{workflow.parameters.video-key}}",
+                "status": "completed",
+                "hls_url": "http://{{workflow.parameters.minio-endpoint}}/{{workflow.parameters.output-folder}}/{{workflow.parameters.video-key}}/master.m3u8",
+                "resolutions": ["1080p", "720p", "480p", "360p"]
+              }'
+        env:
+          - name: API_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name:
+                key: token
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"

@@ -1,0 +1,12 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicyBinding
+metadata:
+  name: argo-dev-policy-binding
+  namespace: minio
+spec:
+  policy: argo-dev
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  user:
+    builtin: Relight5991
