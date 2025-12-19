@@ -8,4 +8,3 @@ resources:
   - muzbuild-frontend/
   - caas-frontend/
   - image-automation/
-  - argo-workflows/

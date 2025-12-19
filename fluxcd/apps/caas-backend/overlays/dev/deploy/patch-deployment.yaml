@@ -20,7 +20,5 @@ spec:
           envFrom:
             - secretRef:
                 name: caas-dev-secrets
-            - secretRef:
-                name: argo-dev-django-key-secrets
             - configMapRef:
                 name: caas-config

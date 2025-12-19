@@ -8,4 +8,3 @@ resources:
   - minio-charts.yaml
   - minio-operator-ext-charts.yaml
   - grafana-charts.yaml
-  - argo-charts.yaml

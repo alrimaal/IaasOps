@@ -9,4 +9,3 @@ resources:
   - minio.yaml
   - minio-tenant.yaml
   - dev.yaml
-  - argo.yaml

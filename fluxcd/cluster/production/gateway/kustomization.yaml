@@ -14,4 +14,3 @@ resources:
   - caas-frontend-http.yaml
   - caas-backend-http.yaml
   - caas-backend-dev-http.yaml
-  - argo-workflows-http-route.yaml
