@@ -19,6 +19,7 @@ spec:
       labels:
         app: caas-backend
     spec:
+      serviceAccountName: caas-backend
       containers:
         - name: caas-backend
           imagePullPolicy: Always
