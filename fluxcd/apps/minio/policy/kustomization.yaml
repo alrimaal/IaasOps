@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - caas-dev.yaml
   - caas-dev-policy-binding.yaml
+  - caas-dev-readonly.yaml
+  - caas-dev-bunny-policy-binding.yaml

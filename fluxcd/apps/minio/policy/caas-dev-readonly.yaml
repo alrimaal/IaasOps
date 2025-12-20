@@ -1,0 +1,22 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicy
+metadata:
+  name: caas-dev
+  namespace: minio
+spec:
+  name: caas-dev
+  statement:
+    - effect: "Allow"
+      action:
+        - "s3:GetObject"
+      resource:
+        - "arn:aws:s3:::caas-dev/*"
+    - effect: "Allow"
+      action:
+        - "s3:GetBucketLocation"
+      resource:
+        - "arn:aws:s3:::caas-dev"
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  version: "2012-10-17"
