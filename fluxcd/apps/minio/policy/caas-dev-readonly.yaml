@@ -1,7 +1,7 @@
 apiVersion: bfiola.dev/v1
 kind: MinioPolicy
 metadata:
-  name: caas-dev
+  name: caas-dev-readonly
   namespace: minio
 spec:
   name: caas-dev

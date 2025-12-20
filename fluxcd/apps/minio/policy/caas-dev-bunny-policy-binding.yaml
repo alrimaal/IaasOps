@@ -4,7 +4,7 @@ metadata:
   name: caas-dev-policy-binding.yaml
   namespace: minio
 spec:
-  policy: caas-dev
+  policy: caas-dev-readonly
   tenantRef:
     namespace: minio-tenant
     name: myminio
