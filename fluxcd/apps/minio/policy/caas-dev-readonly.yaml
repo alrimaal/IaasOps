@@ -4,7 +4,7 @@ metadata:
   name: caas-dev-readonly
   namespace: minio
 spec:
-  name: caas-dev
+  name: caas-dev-readonly
   statement:
     - effect: "Allow"
       action:
