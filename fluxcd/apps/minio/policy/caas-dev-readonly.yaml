@@ -17,10 +17,6 @@ spec:
         - "s3:GetBucketLocation"
       resource:
         - "arn:aws:s3:::caas-dev"
-      condition:
-        StringLike:
-          s3:prefix:
-            - "*"
   tenantRef:
     namespace: minio-tenant
     name: myminio
