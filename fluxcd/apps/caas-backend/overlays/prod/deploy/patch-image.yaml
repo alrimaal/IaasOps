@@ -9,4 +9,4 @@ spec:
     spec:
       containers:
         - name: caas-backend
-          image: ghcr.io/alrimaal/caas-backend:0.1.3 # {"$imagepolicy": "default:caas-backend"}
+          image: ghcr.io/alrimaal/caas-backend:0.1.0 # {"$imagepolicy": "default:caas-backend"}
