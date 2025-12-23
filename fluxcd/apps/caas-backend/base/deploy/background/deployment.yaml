@@ -1,0 +1,32 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: caas-background
+  namespace: default
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: caas-background
+  template:
+    metadata:
+      labels:
+        app: caas-background
+    spec:
+      containers:
+        - name: caas-background
+          image: ghcr.io/alrimaal/caas-background:0.1.1 # {"$imagepolicy": "default:caas-background"}
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: caas-config
+            - secretRef:
+                name: caas-secrets
+      imagePullSecrets:
+        - name: ghcr-secrets

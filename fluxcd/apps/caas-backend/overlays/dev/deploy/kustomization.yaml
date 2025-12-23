@@ -9,3 +9,4 @@ namespace: dev
 patches:
   - path: patch-deployment.yaml
   - path: patch-service.yaml
+  - path: patch-background.yaml

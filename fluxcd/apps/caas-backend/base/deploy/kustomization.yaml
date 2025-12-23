@@ -6,3 +6,6 @@ resources:
   - service-account.yaml
   - role.yaml
   - role-binding.yaml
+  - background/deployment.yaml
+  - background/image-automation.yaml
+  - background/image-policy.yaml
