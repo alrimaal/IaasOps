@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: caas-background
-          image: ghcr.io/alrimaal/caas-background:0.1.3 # {"$imagepolicy": "default:caas-background"}
+          image: ghcr.io/alrimaal/caas-background:0.1.2 # {"$imagepolicy": "default:caas-background"}
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
