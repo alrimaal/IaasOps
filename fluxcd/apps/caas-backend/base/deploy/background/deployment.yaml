@@ -19,6 +19,7 @@ spec:
       labels:
         app: caas-background
     spec:
+      serviceAccountName: caas-backend
       containers:
         - name: caas-background
           image: ghcr.io/alrimaal/caas-background:0.1.5 # {"$imagepolicy": "default:caas-background"}
