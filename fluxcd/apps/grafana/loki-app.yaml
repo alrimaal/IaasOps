@@ -38,7 +38,7 @@ spec:
       pattern_ingester:
         enabled: true
       limits_config:
-        retention_period: 1y
+        retention_period: 6m
         allow_structured_metadata: true
         volume_enabled: true
       ruler:
