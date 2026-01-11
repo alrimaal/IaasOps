@@ -10,8 +10,6 @@ spec:
       action:
         - "admin:SetBucketTarget"
         - "admin:GetBucketTarget"
-      sid:
-        - "EnableRemoteBucketConfiguration"
     - effect: "Allow"
       action:
         - "s3:GetReplicationConfiguration"
