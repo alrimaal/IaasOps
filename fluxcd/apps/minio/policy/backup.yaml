@@ -10,6 +10,8 @@ spec:
       action:
         - "admin:SetBucketTarget"
         - "admin:GetBucketTarget"
+      resource:
+        - "arn:aws:s3:::*"
     - effect: "Allow"
       action:
         - "s3:GetReplicationConfiguration"
