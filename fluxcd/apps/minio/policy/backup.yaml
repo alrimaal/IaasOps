@@ -10,6 +10,10 @@ spec:
       action:
         - "admin:SetBucketTarget"
         - "admin:GetBucketTarget"
+        - "admin:ListBatchJobs"
+        - "admin:DescribeBatchJobs"
+        - "admin:StartBatchJob"
+        - "admin:CancelBatchJob"
       resource:
         - "arn:aws:s3:::*"
     - effect: "Allow"
