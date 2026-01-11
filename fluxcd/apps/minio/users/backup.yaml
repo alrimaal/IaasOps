@@ -1,0 +1,13 @@
+apiVersion: bfiola.dev/v1
+kind: MinioUser
+metadata:
+  name: minio-backup-user
+  namespace: minio
+spec:
+  accessKey: Sneeze3204
+  secretKeyRef:
+    name: minio-backup-user-secrets
+    key: secretKey
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio

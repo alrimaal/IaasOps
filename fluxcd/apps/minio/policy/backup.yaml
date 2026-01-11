@@ -1,0 +1,30 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicy
+metadata:
+  name: backup
+  namespace: minio
+spec:
+  name: backup
+  statement:
+    - effect: "Allow"
+      action:
+        - "admin:SetBucketTarget"
+        - "admin:GetBucketTarget"
+      sid:
+        - "EnableRemoteBucketConfiguration"
+    - effect: "Allow"
+      action:
+        - "s3:GetReplicationConfiguration"
+        - "s3:ListBucket"
+        - "s3:ListBucketMultipartUploads"
+        - "s3:GetBucketLocation"
+        - "s3:GetBucketVersioning"
+        - "s3:GetObjectRetention"
+        - "s3:GetObjectLegalHold"
+        - "s3:PutReplicationConfiguration"
+      resource:
+        - "arn:aws:s3:::*"
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  version: "2012-10-17"

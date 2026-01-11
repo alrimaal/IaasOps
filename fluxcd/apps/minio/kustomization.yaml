@@ -8,3 +8,4 @@ resources:
   - users
   - buckets
   - policy
+  - backup-job.yaml

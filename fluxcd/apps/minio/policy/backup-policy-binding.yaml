@@ -1,0 +1,12 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicyBinding
+metadata:
+  name: backup-policy-binding
+  namespace: minio
+spec:
+  policy: backup
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  user:
+    builtin: Sneeze3204

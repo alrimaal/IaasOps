@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - dev.yaml
   - bunny.yaml
+  - backup.yaml
