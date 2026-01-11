@@ -12,7 +12,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: mc
-              image: minio/mc:latest
+              image: alpine:3.20
               env:
                 - name: MINIO_SECRET_KEY
                   valueFrom:
@@ -33,6 +33,9 @@ spec:
               args:
                 - |
                   set -eu
+                  apk add --no-cache ca-certificates curl
+                  curl -sSL https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/local/bin/mc
+                  chmod +x /usr/local/bin/mc
                   mc alias set local http://myminio-hl.minio-tenant.svc.cluster.local:9000 Sneeze3204 $MINIO_SECRET_KEY
                   mc alias set s3 https://s3.amazonaws.com $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY
                   BUCKETS="$(mc ls local | awk '{print $5}' | sed 's:/$::' | tr '\n' ' ')"
