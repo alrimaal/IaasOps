@@ -9,7 +9,6 @@ spec:
     - effect: "Allow"
       action:
         - "admin:SetBucketTarget"
-        - "admin:GetBucketTarget"
         - "admin:ListBatchJobs"
         - "admin:DescribeBatchJobs"
         - "admin:StartBatchJob"

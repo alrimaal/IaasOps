@@ -69,7 +69,7 @@ spec:
                         delay: "2s"
                   EOF
                   echo "Starting batch replication job for bucket ${b} -> ${b}"
-                  mc batch start local "${jobfile}"
+                  mc --debug batch start local "${jobfile}"
                   done
 
                   echo "All batch jobs started."
