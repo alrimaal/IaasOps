@@ -4,7 +4,7 @@ metadata:
   name: minio-backup-job
   namespace: minio
 spec:
-  schedule: "0 * * * *" # every hour
+  schedule: "0 0 * * *"
   jobTemplate:
     spec:
       template:
@@ -18,7 +18,7 @@ spec:
                   valueFrom:
                     secretKeyRef:
                       name: minio-backup-user-secrets
-                      key: secretkey
+                      key: secretKey
                 - name: AWS_ACCESS_KEY_ID
                   valueFrom:
                     secretKeyRef:
