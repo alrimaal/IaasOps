@@ -10,9 +10,7 @@ spec:
       action:
         - "admin:SetBucketTarget"
         - "admin:GetBucketTarget"
-        - "admin:*"
         - "admin:ListBatchJobs"
-        - "admin:DescribeBatchJobs"
         - "admin:StartBatchJob"
         - "admin:CancelBatchJob"
       resource:
