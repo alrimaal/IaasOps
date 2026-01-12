@@ -5,3 +5,6 @@ resources:
   - bunny.yaml
   - backup.yaml
   - percona.yaml
+  - root.yaml
+  - loki-user.yaml
+  - muzbuild.yaml

@@ -1,0 +1,12 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicyBinding
+metadata:
+  name: loki-policy-binding
+  namespace: minio
+spec:
+  policy: loki-policy
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  user:
+    builtin: ScalableLoki

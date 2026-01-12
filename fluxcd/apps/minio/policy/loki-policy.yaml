@@ -1,0 +1,29 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicy
+metadata:
+  name: loki-policy
+  namespace: minio
+spec:
+  name: loki-policy
+  statement:
+    - effect: "Allow"
+      action:
+        - "s3:GetBucketLocation"
+        - "s3:ListBucket"
+      resource:
+        - "arn:aws:s3:::loki-admin"
+        - "arn:aws:s3:::loki-chunks"
+        - "arn:aws:s3:::loki-ruler"
+    - effect: "Allow"
+      action:
+        - "s3:DeleteObject"
+        - "s3:GetObject"
+        - "s3:PutObject"
+      resource:
+        - "arn:aws:s3:::loki-admin/*"
+        - "arn:aws:s3:::loki-chunks/*"
+        - "arn:aws:s3:::loki-ruler/*"
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  version: "2012-10-17"

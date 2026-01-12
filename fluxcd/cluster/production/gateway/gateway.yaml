@@ -7,7 +7,7 @@ spec:
   gatewayClassName: cilium
   infrastructure:
     annotations:
-      load-balancer.hetzner.cloud/location: fsn1
+      load-balancer.hetzner.cloud/location: hel1
       load-balancer.hetzner.cloud/use-private-ip: "true"
   listeners:
     - name: http

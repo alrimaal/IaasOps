@@ -1,0 +1,12 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicyBinding
+metadata:
+  name: muzbuild-policy-binding
+  namespace: minio
+spec:
+  policy: muzbuild
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  user:
+    builtin: Mashing7894

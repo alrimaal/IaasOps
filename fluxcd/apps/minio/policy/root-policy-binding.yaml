@@ -1,0 +1,12 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicyBinding
+metadata:
+  name: root-policy-binding
+  namespace: minio
+spec:
+  policy: root
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  user:
+    builtin: Staining3691
