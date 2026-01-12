@@ -45,7 +45,7 @@ spec:
                     jobfile="/tmp/replicate-${b}.yaml"
 
                     # Create destination bucket (safe if already exists)
-                    mc mb -p "s3/${b}" || true
+                    mc --debug mb -p "s3/${b}" 
 
                     # Build replicate job YAML per bucket using the structure from MinIO docs. :contentReference[oaicite:3]{index=3}
                     cat > "${jobfile}" <<-EOF
