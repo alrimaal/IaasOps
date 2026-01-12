@@ -1,0 +1,11 @@
+apiVersion: bfiola.dev/v1
+kind: MinioBucket
+metadata:
+  name: psc-backups
+  namespace: minio
+spec:
+  deletionPolicy: IfEmpty
+  name: psc-backups
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
