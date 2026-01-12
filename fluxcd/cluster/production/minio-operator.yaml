@@ -1,14 +1,13 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: apps
+  name: minio-operator
   namespace: flux-system
 spec:
   interval: 5m
   dependsOn:
     - name: namespaces
-    - name: minio-operator
-  path: "./fluxcd/apps"
+  path: "./fluxcd/apps/minio/operator/"
   prune: true
   sourceRef:
     kind: GitRepository
