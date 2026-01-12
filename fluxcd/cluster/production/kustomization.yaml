@@ -5,6 +5,7 @@ resources:
   - namespaces.yaml
   - secrets.yaml
   - charts.yaml
+  - minio-operator.yaml
   - apps.yaml
   - gateway.yaml
   - cert-manager.yaml
