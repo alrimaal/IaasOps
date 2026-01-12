@@ -6,5 +6,5 @@ resources:
   - percona/
   - minio/
   - muzbuild-frontend/
-  - caas-frontend/prod/
+  - caas-frontend/overlays/prod/
   - image-automation/

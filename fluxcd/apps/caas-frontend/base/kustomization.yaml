@@ -5,3 +5,4 @@ resources:
   - image-automation.yaml
   - image-policy.yaml
   - service.yaml
+  - configmap.yaml
