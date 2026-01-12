@@ -44,6 +44,12 @@ module "talos" {
     },
     {
       type = "cpx32"
+    },
+    {
+      type = "cpx32"
+    },
+    {
+      type = "cpx32"
     }
   ]
 
