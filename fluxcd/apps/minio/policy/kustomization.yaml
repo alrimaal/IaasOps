@@ -5,5 +5,5 @@ resources:
   - caas-dev-policy-binding.yaml
   - caas-dev-readonly.yaml
   - caas-dev-bunny-policy-binding.yaml
-  # - backup.yaml
-  # - backup-policy-binding.yaml
+  - backup.yaml
+  - backup-policy-binding.yaml

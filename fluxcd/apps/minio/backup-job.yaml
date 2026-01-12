@@ -47,7 +47,7 @@ spec:
                     jobfile="/tmp/replicate-${b}.yaml"
 
                     # Create destination bucket (safe if already exists)
-                    mc --debug mb -p "s3/${DST_BUCKET_PREFIX}${b}" 
+                    mc mb -p "s3/${DST_BUCKET_PREFIX}${b}" 
 
                     # Build replicate job YAML per bucket using the structure from MinIO docs. :contentReference[oaicite:3]{index=3}
                     cat > "${jobfile}" <<-EOF
@@ -71,7 +71,7 @@ spec:
                         delay: "2s"
                   EOF
                   echo "Starting batch replication job for bucket ${b} -> ${DST_BUCKET_PREFIX}${b}"
-                  mc --debug batch start local "${jobfile}"
+                  mc  batch start local "${jobfile}"
                   done
 
                   echo "All batch jobs started."
