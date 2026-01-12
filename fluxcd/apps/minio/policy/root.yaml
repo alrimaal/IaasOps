@@ -1,0 +1,24 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicy
+metadata:
+  name: root
+  namespace: minio
+spec:
+  name: root
+  statement:
+    - effect: "Allow"
+      action:
+        - "s3:*"
+      resource:
+        - "arn:aws:s3:::*"
+
+    - effect: "Allow"
+      action:
+        - "admin:*"
+      resource:
+        - "arn:aws:s3:::*"
+
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  version: "2012-10-17"

@@ -9,3 +9,7 @@ resources:
   - backup-policy-binding.yaml
   - percona.yaml
   - percona-policy-binding.yaml
+  - root.yaml
+  - root-policy-binding.yaml
+  - loki-policy.yaml
+  - loki-policy-binding.yaml

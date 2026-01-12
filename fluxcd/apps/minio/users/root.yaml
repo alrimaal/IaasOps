@@ -1,0 +1,13 @@
+apiVersion: bfiola.dev/v1
+kind: MinioUser
+metadata:
+  name: minio-root-user
+  namespace: minio
+spec:
+  accessKey: Staining3691
+  secretKeyRef:
+    name: minio-root-secrets
+    key: secretKey
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
