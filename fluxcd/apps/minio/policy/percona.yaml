@@ -1,0 +1,22 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicy
+metadata:
+  name: percona
+  namespace: minio
+spec:
+  name: percona
+  statement:
+    - effect: "Allow"
+      action:
+        - "s3:PutObject"
+        - "s3:GetObject"
+        - "s3:ListBucket"
+        - "s3:AbortMultipartUpload"
+        - "s3:ListMultipartUploadParts"
+      resource:
+        - "arn:aws:s3:::pxc-backups"
+        - "arn:aws:s3:::pxc-backups/*"
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  version: "2012-10-17"

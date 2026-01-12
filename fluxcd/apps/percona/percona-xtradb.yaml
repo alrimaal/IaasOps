@@ -28,6 +28,22 @@ spec:
       configuration: |
         [mysqld]
         pxc_strict_mode=PERMISSIVE
+    backup:
+      enabled: true
+      storages:
+        minio:
+          type: s3
+          s3:
+            bucket: pxc-backups
+            region: us-east-1
+            endpointUrl: http://myminio-hl.minio-tenant.svc.cluster.local:9000
+            credentialsSecret: percona-minio-secrets
+            insecureSkipTLSVerify: true # Cilium encryption
+      schedule:
+        - name: hourly
+          schedule: "0 * * * *"
+          keep: 7
+          storageName: minio
     users:
       - name: grafanaUser
         dbs:

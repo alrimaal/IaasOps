@@ -1,0 +1,13 @@
+apiVersion: bfiola.dev/v1
+kind: MinioUser
+metadata:
+  name: minio-percona-user
+  namespace: minio
+spec:
+  accessKey: Sloping4585
+  secretKeyRef:
+    name: percona-minio-secrets
+    key: AWS_SECRET_ACCESS_KEY
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio

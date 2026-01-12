@@ -7,3 +7,5 @@ resources:
   - caas-dev-bunny-policy-binding.yaml
   - backup.yaml
   - backup-policy-binding.yaml
+  - percona.yaml
+  - percona-policy-binding.yaml
