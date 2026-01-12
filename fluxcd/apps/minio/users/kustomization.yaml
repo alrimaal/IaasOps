@@ -7,3 +7,4 @@ resources:
   - percona.yaml
   - root.yaml
   - loki-user.yaml
+  - muzbuild.yaml

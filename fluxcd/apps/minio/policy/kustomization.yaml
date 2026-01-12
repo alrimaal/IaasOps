@@ -13,3 +13,5 @@ resources:
   - root-policy-binding.yaml
   - loki-policy.yaml
   - loki-policy-binding.yaml
+  - muzbuild.yaml
+  - muzbuild-policy-binding.yaml
