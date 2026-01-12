@@ -11,9 +11,10 @@ module "talos" {
 
   hcloud_token = data.bitwarden_secret.hcloud_token.value
 
-  cluster_name    = "cluster"
+  cluster_name    = "migrated-cluster"
   cluster_domain  = "cluster.local"
-  datacenter_name = "fsn1-dc14"
+  cluster_prefix  = true
+  datacenter_name = "hel1-dc2"
 
   output_mode_config_cluster_endpoint = "public_ip"
   firewall_use_current_ip             = true
@@ -32,16 +33,21 @@ module "talos" {
 
 
   control_plane_count       = 3
-  control_plane_server_type = "cx22"
+  control_plane_server_type = "cx23"
 
   worker_nodes = [
     {
       type = "cpx32"
+    },
+    {
+      type = "cpx32"
+    },
+    {
+      type = "cpx32"
     }
   ]
-  worker_count       = 3
-  worker_server_type = "cpx21"
-  disable_arm        = true
+
+  disable_arm = true
 
   network_ipv4_cidr = "10.0.0.0/16"
   node_ipv4_cidr    = "10.0.1.0/24"
@@ -97,7 +103,7 @@ resource "kubernetes_secret" "sops_gpg" {
   data = {
     "sops.asc" = data.bitwarden_secret.gpg_sops_private_key.value
   }
-  depends_on = [module.talos, local_file.talosconfig]
+  depends_on = [module.talos, local_file.talosconfig, flux_bootstrap_git.this]
 
   type = "Opaque"
 }
