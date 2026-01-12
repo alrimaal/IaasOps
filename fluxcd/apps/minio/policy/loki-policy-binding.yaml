@@ -9,4 +9,4 @@ spec:
     namespace: minio-tenant
     name: myminio
   user:
-    builtin: ScalableLoki
+    builtin: Reselect0187

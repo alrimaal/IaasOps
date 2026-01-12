@@ -4,7 +4,7 @@ metadata:
   name: minio-loki-user
   namespace: minio
 spec:
-  accessKey: ScalableLoki
+  accessKey: Reselect0187
   secretKeyRef:
     name: loki-secrets
     key: LOKI_MINIO_PASSWORD
