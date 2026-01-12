@@ -7,4 +7,5 @@ resources:
   - minio/
   - muzbuild-frontend/
   - caas-frontend/overlays/prod/
+  - caas-frontend/overlays/dev/
   - image-automation/
