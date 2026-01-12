@@ -27,6 +27,6 @@ spec:
             - containerPort: 6021
           envFrom:
             - configMapRef:
-              name: caas-frontend-config
+                name: caas-frontend-config
       imagePullSecrets:
         - name: ghcr-secrets
