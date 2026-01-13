@@ -4,5 +4,5 @@ metadata:
   name: caas-frontend-config
   namespace: default
 data:
-  VITE_LOGIN_ENABLED: "false"
-  VITE_API_BASE_URL: "https://bunyaandev.alrimaal.com/api"
+  LOGIN_ENABLED: "false"
+  API_URL: "https://bunyaandev.alrimaal.com/api"
