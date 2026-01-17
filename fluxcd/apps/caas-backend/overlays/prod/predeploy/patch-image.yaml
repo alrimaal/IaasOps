@@ -8,5 +8,5 @@ spec:
     spec:
       containers:
         - name: caas-db-migration
-          image: ghcr.io/alrimaal/caas-backend:0.1.8 # {"$imagepolicy": "default:caas-backend"}
+          image: ghcr.io/alrimaal/caas-backend:0.1.9 # {"$imagepolicy": "default:caas-backend"}
           command: ["python", "manage.py", "migrate", "--noinput"]
