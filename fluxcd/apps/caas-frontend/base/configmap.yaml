@@ -5,4 +5,3 @@ metadata:
   namespace: default
 data:
   LOGIN_ENABLED: "false"
-  API_URL: "https://bunyaandev.alrimaal.com/api"

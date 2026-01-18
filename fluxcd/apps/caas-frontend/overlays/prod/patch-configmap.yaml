@@ -5,5 +5,5 @@ metadata:
   namespace: default
 data:
   LOGIN_ENABLED: "true"
-  API_URL: "https://bunyaandev.alrimaal.com/api"
-  MIXPANEL_TOKEN: "3f107eb2a389318cd8f17d40c735d179"
+  API_URL: "https://api.bunyaan.space/api"
+  MIXPANEL_TOKEN: "8eaf7533ac6465dffa802012d29ec378"
