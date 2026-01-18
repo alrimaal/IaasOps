@@ -9,3 +9,4 @@ resources:
   - loki-user.yaml
   - muzbuild.yaml
   - caas.yaml
+  - bunny-prod.yaml

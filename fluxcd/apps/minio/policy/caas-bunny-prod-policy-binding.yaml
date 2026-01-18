@@ -1,0 +1,12 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicyBinding
+metadata:
+  name: caas-bunny-prod-policy-binding
+  namespace: minio
+spec:
+  policy: caas-readonly
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  user:
+    builtin: Ludicrous9628

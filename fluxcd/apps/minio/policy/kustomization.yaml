@@ -17,3 +17,5 @@ resources:
   - muzbuild-policy-binding.yaml
   - caas.yaml
   - caas-policy-binding.yaml
+  - caas-readonly.yaml
+  - caas-bunny-prod-policy-binding.yaml
