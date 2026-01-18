@@ -15,3 +15,5 @@ resources:
   - loki-policy-binding.yaml
   - muzbuild.yaml
   - muzbuild-policy-binding.yaml
+  - caas.yaml
+  - caas-policy-binding.yaml

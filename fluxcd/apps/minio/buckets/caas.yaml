@@ -1,0 +1,11 @@
+apiVersion: bfiola.dev/v1
+kind: MinioBucket
+metadata:
+  name: caas
+  namespace: minio
+spec:
+  deletionPolicy: IfEmpty
+  name: caas
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio

@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - caas-dev.yaml
   - pxc-backups.yaml
+  - caas.yaml

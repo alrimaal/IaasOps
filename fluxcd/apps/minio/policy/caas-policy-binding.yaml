@@ -1,0 +1,12 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicyBinding
+metadata:
+  name: caas-policy-binding
+  namespace: minio
+spec:
+  policy: caas
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  user:
+    builtin: Triceps3007

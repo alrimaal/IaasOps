@@ -8,3 +8,4 @@ resources:
   - root.yaml
   - loki-user.yaml
   - muzbuild.yaml
+  - caas.yaml
