@@ -7,3 +7,4 @@ data:
   DEBUG: "True"
   MINIO_BUCKET_NAME: "caas-dev"
   KUBERNETES_NAMESPACE: "dev"
+  CDN_BASE_URL: "bunyaan"
