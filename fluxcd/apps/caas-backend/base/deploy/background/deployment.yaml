@@ -24,10 +24,5 @@ spec:
         - name: caas-background
           image: ghcr.io/alrimaal/caas-background:0.1.10 # {"$imagepolicy": "default:caas-background"}
           imagePullPolicy: Always
-          envFrom:
-            - configMapRef:
-                name: caas-config
-            - secretRef:
-                name: caas-secrets
       imagePullSecrets:
         - name: ghcr-secrets

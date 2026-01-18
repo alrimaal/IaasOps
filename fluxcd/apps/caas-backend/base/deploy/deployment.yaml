@@ -25,10 +25,5 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
-          envFrom:
-            - configMapRef:
-                name: caas-config
-            - secretRef:
-                name: caas-secrets
       imagePullSecrets:
         - name: ghcr-secrets

@@ -6,3 +6,4 @@ resources:
 
 patches:
   - path: patch-image.yaml
+  - path: patch-background.yaml

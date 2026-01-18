@@ -10,3 +10,8 @@ spec:
         - name: caas-db-migration
           image: ghcr.io/alrimaal/caas-backend:0.1.10 # {"$imagepolicy": "default:caas-backend"}
           command: ["python", "manage.py", "migrate", "--noinput"]
+          envFrom:
+            - configMapRef:
+                name: caas-config
+            - secretRef:
+                name: caas-secrets

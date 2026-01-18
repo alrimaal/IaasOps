@@ -9,10 +9,5 @@ spec:
       restartPolicy: Never
       containers:
         - name: caas-db-migration
-          envFrom:
-            - configMapRef:
-                name: caas-config
-            - secretRef:
-                name: caas-secrets
       imagePullSecrets:
         - name: ghcr-secrets

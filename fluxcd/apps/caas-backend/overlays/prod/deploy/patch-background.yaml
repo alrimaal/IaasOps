@@ -2,14 +2,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: caas-backend
+  name: caas-background
   namespace: default
 spec:
   template:
     spec:
       containers:
-        - name: caas-backend
-          image: ghcr.io/alrimaal/caas-backend:0.1.10 # {"$imagepolicy": "default:caas-backend"}
+        - name: caas-background
           envFrom:
             - configMapRef:
                 name: caas-config
