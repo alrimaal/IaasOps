@@ -8,4 +8,4 @@ spec:
     name: caas-background
   policy:
     semver:
-      range: 0.x.x
+      range: x.x.x
