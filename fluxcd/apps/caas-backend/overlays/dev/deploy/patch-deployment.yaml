@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: caas-backend
-          image: ghcr.io/alrimaal/caas-backend:ephemeral
+          image: ghcr.io/alrimaal/caas-backend:0.2.0 # {"$imagepolicy": "default:caas-backend"}
           envFrom:
             - secretRef:
                 name: caas-dev-secrets
