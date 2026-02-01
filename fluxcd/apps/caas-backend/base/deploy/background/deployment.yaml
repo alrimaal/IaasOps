@@ -22,7 +22,7 @@ spec:
       serviceAccountName: caas-backend
       containers:
         - name: caas-background
-          image: ghcr.io/alrimaal/caas-background:1.0.1 # {"$imagepolicy": "default:caas-background"}
+          image: ghcr.io/alrimaal/caas-background:1.0.2 # {"$imagepolicy": "default:caas-background"}
           imagePullPolicy: Always
       imagePullSecrets:
         - name: ghcr-secrets
