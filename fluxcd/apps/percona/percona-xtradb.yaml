@@ -21,6 +21,7 @@ spec:
     tls:
       enabled: true
     pxc:
+      size: 1
       clusterSecretName: percona-xtradb-secrets
       persistence:
         enabled: true
