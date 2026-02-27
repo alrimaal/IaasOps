@@ -8,7 +8,7 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: migration
+    branch: main
   secretRef:
     name: flux-system
   url: https://github.com/alrimaal/IaasOps
