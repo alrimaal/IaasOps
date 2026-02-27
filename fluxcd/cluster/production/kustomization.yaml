@@ -8,8 +8,8 @@ resources:
   - minio-operator.yaml
   - apps.yaml
   - gateway.yaml
-  - cert-manager.yaml
-  - caas-predeploy.yaml
-  - caas-backend.yaml
-  - caas-predeploy-dev.yaml
-  - caas-backend-dev.yaml
+  # - cert-manager.yaml
+  # - caas-predeploy.yaml
+  # - caas-backend.yaml
+  # - caas-predeploy-dev.yaml
+  # - caas-backend-dev.yaml
