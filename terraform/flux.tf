@@ -9,7 +9,6 @@ provider "flux" {
       username = "git" # Using PAT so any string works
       password = data.bitwarden_secret.flux_github_token.value
     }
-    branch = "migration"
   }
 }
 
