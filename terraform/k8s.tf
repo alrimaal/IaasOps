@@ -11,7 +11,7 @@ module "talos" {
 
   hcloud_token = data.bitwarden_secret.hcloud_token.value
 
-  cluster_name    = "migrated-cluster"
+  cluster_name    = "cluster"
   cluster_domain  = "cluster.local"
   cluster_prefix  = true
   datacenter_name = "hel1-dc2"
@@ -32,25 +32,19 @@ module "talos" {
   enable_alias_ip    = true
 
 
-  control_plane_count       = 3
+  control_plane_count       = 1
   control_plane_server_type = "cx23"
 
   worker_nodes = [
     {
-      type = "cpx32"
+      type = "cx33"
     },
     {
-      type = "cpx32"
+      type = "cx33"
     },
     {
-      type = "cpx32"
+      type = "cx33"
     },
-    {
-      type = "cpx32"
-    },
-    {
-      type = "cpx32"
-    }
   ]
 
   disable_arm = true
