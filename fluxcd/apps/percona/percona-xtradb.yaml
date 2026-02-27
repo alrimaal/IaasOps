@@ -42,7 +42,7 @@ spec:
             insecureSkipTLSVerify: true # Cilium encryption
       schedule:
         - name: hourly
-          schedule: "0 * * * *"
+          schedule: "0 0 * * *"
           keep: 7
           storageName: minio
     users:
