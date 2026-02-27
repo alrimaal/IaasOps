@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   # - grafana/
   - openebs/
-  # - percona/
+  - percona/
   - minio/
   # - caas-frontend/overlays/prod/
   # - image-automation/
