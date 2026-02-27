@@ -9,8 +9,6 @@ resources:
   - apps.yaml
   - gateway.yaml
   - cert-manager.yaml
-  - muzbuild-predeploy.yaml
-  - muzbuild.yaml
   - caas-predeploy.yaml
   - caas-backend.yaml
   - caas-predeploy-dev.yaml

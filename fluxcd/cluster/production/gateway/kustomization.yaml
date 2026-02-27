@@ -9,8 +9,6 @@ resources:
   - cluster-issuer.yaml
   - minio-http.yaml
   - minio-console-http.yaml
-  - muzbuild-http.yaml
-  - muzbuild-frontend-http.yaml
   - caas-frontend-http.yaml
   - caas-backend-http.yaml
   - caas-backend-dev-http.yaml

@@ -5,6 +5,5 @@ resources:
   - openebs/
   - percona/
   - minio/
-  - muzbuild-frontend/
   - caas-frontend/overlays/prod/
   - image-automation/
