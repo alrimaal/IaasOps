@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: qirtaas-db-migration
+  namespace: default
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: qirtaas-db-migration
+          image: ghcr.io/alrimaal/qirtaas-backend:0.0.1 # {"$imagepolicy": "default:qirtaas-backend"}
+          command: ["python", "manage.py", "migrate", "--noinput"]
+          envFrom:
+            - secretRef:
+                name: qirtaas-secrets
+      imagePullSecrets:
+        - name: ghcr-secrets
