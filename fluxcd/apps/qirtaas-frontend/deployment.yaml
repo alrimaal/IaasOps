@@ -1,0 +1,29 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qirtaas-frontend
+  namespace: default
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: qirtaas-frontend
+  template:
+    metadata:
+      labels:
+        app: qirtaas-frontend
+    spec:
+      containers:
+        - name: qirtaas-frontend
+          image: ghcr.io/alrimaal/qirtaas-frontend:0.0.1 # {"$imagepolicy": "default:qirtaas-frontend"}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 6021
+      imagePullSecrets:
+        - name: ghcr-secrets
