@@ -22,7 +22,7 @@ spec:
       containers:
         - name: qirtaas-backend
           imagePullPolicy: Always
-          image: ghcr.io/alrimaal/qirtaas-backend:0.0.1 # {"$imagepolicy": "default:qirtaas-backend"}
+          image: ghcr.io/alrimaal/qirtaas-backend:0.0.3 # {"$imagepolicy": "default:qirtaas-backend"}
           envFrom:
             - secretRef:
                 name: qirtaas-secrets
