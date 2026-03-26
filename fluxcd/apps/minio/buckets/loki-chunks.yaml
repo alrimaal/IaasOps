@@ -1,0 +1,11 @@
+apiVersion: bfiola.dev/v1
+kind: MinioBucket
+metadata:
+  name: loki-chunks
+  namespace: minio
+spec:
+  deletionPolicy: IfEmpty
+  name: loki-chunks
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio

@@ -1,0 +1,11 @@
+apiVersion: bfiola.dev/v1
+kind: MinioBucket
+metadata:
+  name: loki-admin
+  namespace: minio
+spec:
+  deletionPolicy: IfEmpty
+  name: loki-admin
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio

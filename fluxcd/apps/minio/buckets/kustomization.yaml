@@ -4,3 +4,6 @@ resources:
   - caas-dev.yaml
   - pxc-backups.yaml
   - caas.yaml
+  - loki-chunks.yaml
+  - loki-admin.yaml
+  - loki-ruler.yaml
