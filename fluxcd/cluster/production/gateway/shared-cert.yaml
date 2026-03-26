@@ -12,6 +12,8 @@ spec:
     - bunyaan.space
     - api.bunyaan.space
     - bunyaandev.alrimaal.com
+    - qirtaas.alrimaal.com
+    - qirtaasbackend.alrimaal.com
   issuerRef:
     name: letsencrypt-gateway
     kind: ClusterIssuer
