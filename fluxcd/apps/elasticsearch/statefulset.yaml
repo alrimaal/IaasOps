@@ -42,11 +42,11 @@ spec:
 
           resources:
             requests:
-              memory: "1Gi"
+              memory: "2Gi"
               cpu: "500m"
             limits:
-              memory: "1Gi"
-              cpu: "500m"
+              memory: "2Gi"
+              cpu: "1m"
 
           volumeMounts:
             - name: data
