@@ -29,7 +29,7 @@ spec:
               value: single-node
 
             - name: xpack.security.enabled
-              value: "true"
+              value: "false"
 
             - name: ELASTIC_PASSWORD
               valueFrom:
