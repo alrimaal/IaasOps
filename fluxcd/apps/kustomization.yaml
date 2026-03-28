@@ -8,3 +8,4 @@ resources:
   - caas-frontend/overlays/prod/
   - image-automation/
   - qirtaas-frontend/
+  - elasticsearch/
