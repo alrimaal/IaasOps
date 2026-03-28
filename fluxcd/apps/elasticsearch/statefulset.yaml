@@ -45,8 +45,8 @@ spec:
               memory: "1Gi"
               cpu: "500m"
             limits:
-              memory: "2Gi"
-              cpu: "1"
+              memory: "1Gi"
+              cpu: "500m"
 
           volumeMounts:
             - name: data
