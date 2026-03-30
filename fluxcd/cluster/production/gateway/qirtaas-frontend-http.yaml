@@ -9,7 +9,7 @@ spec:
       namespace: cilium-gateway
       sectionName: https
   hostnames:
-    - "qirtaas.alrimaal.com"
+    - "qirtaas.io"
   rules:
     - backendRefs:
         - name: qirtaas-frontend

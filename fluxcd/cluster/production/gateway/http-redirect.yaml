@@ -15,8 +15,8 @@ spec:
     - bunyaan.space
     - api.bunyaan.space
     - bunyaandev.alrimaal.com
-    - qirtaas.alrimaal.com
-    - qirtaasbackend.alrimaal.com
+    - qirtaas.io
+    - api.qirtaas.io
   rules:
     - filters:
         - type: RequestRedirect
