@@ -9,7 +9,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: qirtaas-db-migration
-          image: ghcr.io/alrimaal/qirtaas-backend:0.0.7 # {"$imagepolicy": "default:qirtaas-backend"}
+          image: ghcr.io/alrimaal/qirtaas-backend:0.0.8 # {"$imagepolicy": "default:qirtaas-backend"}
           command: ["python", "manage.py", "migrate", "--noinput"]
           envFrom:
             - secretRef:
