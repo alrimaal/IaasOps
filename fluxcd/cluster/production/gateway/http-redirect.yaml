@@ -18,6 +18,7 @@ spec:
     - qirtaas.io
     - api.qirtaas.io
     - qirtaas.alrimaal.com
+    - qirtaasdev.alrimaal.com
     - qirtaasbackend.alrimaal.com
   rules:
     - filters:
