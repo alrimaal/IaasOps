@@ -14,4 +14,4 @@ resources:
   - caas-backend-dev-http.yaml
   - qirtaas-frontend-http.yaml
   - qirtaas-backend-http.yaml
-  - qirtaas-frontend-dev-http.yaml # removed to not impact SEO
+  # - qirtaas-frontend-dev-http.yaml # removed to not impact SEO
