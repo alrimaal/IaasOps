@@ -7,5 +7,6 @@ resources:
   - minio/
   - caas-frontend/overlays/prod/
   - image-automation/
-  - qirtaas-frontend/
+  - qirtaas-frontend/overlays/prod/
+  - qirtaas-frontend/overlays/dev/
   - elasticsearch/
