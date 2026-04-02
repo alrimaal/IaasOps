@@ -10,7 +10,6 @@ spec:
       sectionName: https
   hostnames:
     - "qirtaas.io"
-    - "qirtaas.alrimaal.com"
   rules:
     - backendRefs:
         - name: qirtaas-frontend
