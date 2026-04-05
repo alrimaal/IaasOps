@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: qirtaas-config
+  namespace: default
+data:
+  AUTOMATIC_EMAILS_ENABLED: "False"

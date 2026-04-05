@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
+  - background/configmap.yaml
+  - background/deployment.yaml
