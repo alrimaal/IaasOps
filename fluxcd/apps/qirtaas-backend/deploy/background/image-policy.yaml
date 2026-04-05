@@ -1,0 +1,11 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: qirtaas-background
+  namespace: default
+spec:
+  imageRepositoryRef:
+    name: qirtaas-background
+  policy:
+    semver:
+      range: x.x.x

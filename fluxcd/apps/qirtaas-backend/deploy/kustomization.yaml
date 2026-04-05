@@ -3,5 +3,7 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
+  - background/image-automation.yaml
+  - background/image-policy.yaml
   - background/configmap.yaml
   - background/deployment.yaml
