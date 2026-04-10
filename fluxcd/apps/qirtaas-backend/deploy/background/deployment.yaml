@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: qirtaas-background
-          image: ghcr.io/alrimaal/qirtaas-background:0.0.12 # {"$imagepolicy": "default:qirtaas-background"}
+          image: ghcr.io/alrimaal/qirtaas-background:0.0.13 # {"$imagepolicy": "default:qirtaas-background"}
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
