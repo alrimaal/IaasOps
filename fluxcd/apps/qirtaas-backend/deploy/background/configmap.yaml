@@ -7,4 +7,4 @@ data:
   AUTOMATIC_EMAILS_ENABLED: "True"
   QURAN_API_BASE_URL: "https://apis.quran.foundation/content/api/v4"
   QURAN_OAUTH_TOKEN_URL: "https://oauth2.quran.foundation/oauth2/token"
-  QURAN_ELIGIBILITY_WINDOW_HOURS: "4"
+  QURAN_ELIGIBILITY_WINDOW_HOURS: "24"
