@@ -5,7 +5,7 @@ metadata:
   name: qirtaas-background
   namespace: default
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
