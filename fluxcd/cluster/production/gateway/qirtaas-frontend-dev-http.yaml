@@ -14,7 +14,7 @@ spec:
     # Only redirect landing page
     - matches:
         - path:
-            type: PathExact
+            type: Exact
             value: /
       filters:
         - type: RequestRedirect
