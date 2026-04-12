@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: qirtaas-db-migration
+  namespace: default
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: qirtaas-db-migration
+          command: ["python", "manage.py", "migrate", "--noinput"]
+      imagePullSecrets:
+        - name: ghcr-secrets

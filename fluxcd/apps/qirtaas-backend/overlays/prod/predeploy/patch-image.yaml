@@ -6,7 +6,6 @@ metadata:
 spec:
   template:
     spec:
-      restartPolicy: Never
       containers:
         - name: qirtaas-db-migration
           image: ghcr.io/alrimaal/qirtaas-backend:0.0.15 # {"$imagepolicy": "default:qirtaas-backend"}
@@ -14,5 +13,3 @@ spec:
           envFrom:
             - secretRef:
                 name: qirtaas-secrets
-      imagePullSecrets:
-        - name: ghcr-secrets

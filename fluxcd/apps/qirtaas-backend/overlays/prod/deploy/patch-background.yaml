@@ -5,28 +5,13 @@ metadata:
   name: qirtaas-background
   namespace: default
 spec:
-  replicas: 2
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
-  selector:
-    matchLabels:
-      app: qirtaas-background
   template:
-    metadata:
-      labels:
-        app: qirtaas-background
     spec:
       containers:
         - name: qirtaas-background
           image: ghcr.io/alrimaal/qirtaas-background:0.0.15 # {"$imagepolicy": "default:qirtaas-background"}
-          imagePullPolicy: Always
           envFrom:
             - configMapRef:
                 name: qirtaas-config
             - secretRef:
                 name: qirtaas-secrets
-      imagePullSecrets:
-        - name: ghcr-secrets

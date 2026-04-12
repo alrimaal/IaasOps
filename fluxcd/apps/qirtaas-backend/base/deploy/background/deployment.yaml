@@ -1,0 +1,26 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qirtaas-background
+  namespace: default
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: qirtaas-background
+  template:
+    metadata:
+      labels:
+        app: qirtaas-background
+    spec:
+      containers:
+        - name: qirtaas-background
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: ghcr-secrets

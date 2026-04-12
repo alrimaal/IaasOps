@@ -7,7 +7,7 @@ spec:
   interval: 5m
   dependsOn:
     - name: qirtaas-predeploy
-  path: "./fluxcd/apps/qirtaas-backend/deploy"
+  path: "./fluxcd/apps/qirtaas-backend/overlays/prod/deploy"
   prune: true
   sourceRef:
     kind: GitRepository
