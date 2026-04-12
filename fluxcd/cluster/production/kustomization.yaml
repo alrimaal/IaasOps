@@ -15,3 +15,5 @@ resources:
   - caas-backend-dev.yaml
   - qirtaas-predeploy.yaml
   - qirtaas-backend.yaml
+  - qirtaas-predeploy-dev.yaml
+  - qirtaas-backend-dev.yaml
