@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - image-automation.yaml
   - image-policy.yaml
-  - configmap.yaml
   - deployment.yaml
