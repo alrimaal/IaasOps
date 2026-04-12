@@ -13,5 +13,5 @@ spec:
   rules:
     - backendRefs:
         - name: qirtaas-backend
-          namespace: default
+          namespace: dev
           port: 80
