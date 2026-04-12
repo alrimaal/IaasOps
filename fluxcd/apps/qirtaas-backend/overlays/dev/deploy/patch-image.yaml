@@ -14,3 +14,5 @@ spec:
           envFrom:
             - secretRef:
                 name: qirtaas-secrets
+            - configMapRef:
+                name: qirtaas-config

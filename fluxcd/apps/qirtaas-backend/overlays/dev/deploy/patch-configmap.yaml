@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: qirtaas-config
-  namespace: default
-data:
-  QURAN_API_BASE_URL: "https://apis-prelive.quran.foundation/content/api/v4"
-  QURAN_OAUTH_TOKEN_URL: "https://prelive-oauth2.quran.foundation/oauth2/token"
