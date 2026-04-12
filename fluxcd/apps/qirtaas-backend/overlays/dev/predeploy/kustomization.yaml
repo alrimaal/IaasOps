@@ -7,4 +7,4 @@ resources:
 namespace: dev
 
 patches:
-  - path: patch-secrets.yaml
+  - path: patch-image.yaml
