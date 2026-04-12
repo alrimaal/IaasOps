@@ -125,3 +125,19 @@ spec:
         passwordSecretRef:
           name: qirtaas-mysql-secrets
           key: database-password
+      - name: Playlist6946 # qirtaas dev
+        dbs:
+          - qirtaas_dev_db
+        grants:
+          - SELECT
+          - INSERT
+          - UPDATE
+          - DELETE
+          - CREATE
+          - DROP
+          - INDEX
+          - ALTER
+          - REFERENCES
+        passwordSecretRef:
+          name: qirtaas-dev-mysql-secrets
+          key: database-password
