@@ -15,7 +15,7 @@ spec:
     - qirtaas.io
     - api.qirtaas.io
     - qirtaas.alrimaal.com
-    # - qirtaasdev.alrimaal.com # removed to not impact SEO
+    - qirtaasdev.alrimaal.com
     - qirtaasbackend.alrimaal.com
   issuerRef:
     name: letsencrypt-gateway

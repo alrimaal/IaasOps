@@ -11,6 +11,20 @@ spec:
   hostnames:
     - "qirtaasdev.alrimaal.com"
   rules:
+    # Only redirect landing page
+    - matches:
+        - path:
+            type: PathExact
+            value: /
+      filters:
+        - type: RequestRedirect
+          requestRedirect:
+            path:
+              type: ReplaceFullPath
+              replaceFullPath: /auth
+            statusCode: 302
+
+    # Everything else goes to frontend service normally
     - backendRefs:
         - name: qirtaas-frontend
           namespace: dev
