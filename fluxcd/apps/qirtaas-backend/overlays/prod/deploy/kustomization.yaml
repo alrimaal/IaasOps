@@ -6,5 +6,6 @@ resources:
   - ../../../base/deploy/background
 
 patches:
+  - path: patch-configmap.yaml
   - path: patch-image.yaml
   - path: patch-background.yaml

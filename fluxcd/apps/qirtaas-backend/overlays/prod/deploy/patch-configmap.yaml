@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: qirtaas-config
+  namespace: default
+data:
+  QURAN_API_BASE_URL: "https://apis.quran.foundation/content/api/v4"
+  QURAN_OAUTH_TOKEN_URL: "https://oauth2.quran.foundation/oauth2/token"
+  QURAN_OAUTH_REDIRECT_URI: "https://qirtaas.io/oauth/quran/callback"
+  QURAN_POST_API_BASE_URL: "https://apis.quran.foundation/quran-reflect/quran-reflect/v1"
