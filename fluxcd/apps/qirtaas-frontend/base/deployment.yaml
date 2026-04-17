@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: qirtaas-frontend
-          image: ghcr.io/alrimaal/qirtaas-frontend:0.0.108 # {"$imagepolicy": "default:qirtaas-frontend"}
+          image: ghcr.io/alrimaal/qirtaas-frontend:0.0.109 # {"$imagepolicy": "default:qirtaas-frontend"}
           imagePullPolicy: Always
           ports:
             - containerPort: 6021
