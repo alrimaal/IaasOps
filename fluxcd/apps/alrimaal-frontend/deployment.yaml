@@ -1,0 +1,29 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alrimaal-frontend
+  namespace: default
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: alrimaal-frontend
+  template:
+    metadata:
+      labels:
+        app: alrimaal-frontend
+    spec:
+      containers:
+        - name: alrimaal-frontend
+          image: ghcr.io/alrimaal/alrimaal-frontend:0.0.0 # {"$imagepolicy": "default:alrimaal-frontend"}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 6021
+      imagePullSecrets:
+        - name: ghcr-secrets

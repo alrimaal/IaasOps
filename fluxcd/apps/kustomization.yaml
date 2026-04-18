@@ -10,3 +10,4 @@ resources:
   - qirtaas-frontend/overlays/prod/
   - qirtaas-frontend/overlays/dev/
   - elasticsearch/
+  - alrimaal-frontend/
