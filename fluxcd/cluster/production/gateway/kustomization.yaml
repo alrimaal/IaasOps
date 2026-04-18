@@ -16,3 +16,4 @@ resources:
   - qirtaas-backend-http.yaml
   - qirtaas-frontend-dev-http.yaml
   - qirtaas-backend-dev-http.yaml
+  - alrimaal-frontend-http.yaml

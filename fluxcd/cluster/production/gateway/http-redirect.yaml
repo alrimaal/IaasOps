@@ -20,6 +20,7 @@ spec:
     - qirtaas.alrimaal.com
     - qirtaasdev.alrimaal.com
     - qirtaasbackend.alrimaal.com
+    - alrimaal.com
   rules:
     - filters:
         - type: RequestRedirect

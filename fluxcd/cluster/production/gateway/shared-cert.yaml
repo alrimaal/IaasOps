@@ -17,6 +17,7 @@ spec:
     - qirtaas.alrimaal.com
     - qirtaasdev.alrimaal.com
     - qirtaasbackend.alrimaal.com
+    - alrimaal.com
   issuerRef:
     name: letsencrypt-gateway
     kind: ClusterIssuer
