@@ -28,7 +28,7 @@ module "talos" {
     }
   ]
 
-  enable_floating_ip = true
+  enable_floating_ip = false
   enable_alias_ip    = true
 
 
