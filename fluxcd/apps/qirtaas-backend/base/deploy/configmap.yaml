@@ -5,4 +5,4 @@ metadata:
   namespace: default
 data:
   AUTOMATIC_EMAILS_ENABLED: "False"
-  QURAN_ELIGIBILITY_WINDOW_HOURS: "24"
+  QURAN_ELIGIBILITY_WINDOW_HOURS: "5"
