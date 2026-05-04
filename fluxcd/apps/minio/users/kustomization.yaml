@@ -10,3 +10,4 @@ resources:
   - muzbuild.yaml
   - caas.yaml
   - bunny-prod.yaml
+  - qirtaas.yaml

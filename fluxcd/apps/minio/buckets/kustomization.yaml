@@ -7,3 +7,4 @@ resources:
   - loki-chunks.yaml
   - loki-admin.yaml
   - loki-ruler.yaml
+  - qirtaas.yaml

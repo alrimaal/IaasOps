@@ -1,0 +1,12 @@
+apiVersion: bfiola.dev/v1
+kind: MinioPolicyBinding
+metadata:
+  name: qirtaas-policy-binding
+  namespace: minio
+spec:
+  policy: qirtaas
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
+  user:
+    builtin: Simile4083

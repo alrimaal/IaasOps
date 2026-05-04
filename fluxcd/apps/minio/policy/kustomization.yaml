@@ -19,3 +19,5 @@ resources:
   - caas-policy-binding.yaml
   - caas-readonly.yaml
   - caas-bunny-prod-policy-binding.yaml
+  - qirtaas.yaml
+  - qirtaas-policy-binding.yaml

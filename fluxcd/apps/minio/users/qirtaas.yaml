@@ -1,0 +1,13 @@
+apiVersion: bfiola.dev/v1
+kind: MinioUser
+metadata:
+  name: minio-qirtaas-user
+  namespace: minio
+spec:
+  accessKey: Simile4083
+  secretKeyRef:
+    name: minio-qirtaas-user-secrets
+    key: secretKey
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio
