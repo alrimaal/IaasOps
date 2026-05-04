@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
         - name: qirtaas-backend
-          image: ghcr.io/alrimaal/qirtaas-backend:0.0.16 # {"$imagepolicy": "default:qirtaas-backend"}
+          image: ghcr.io/alrimaal/qirtaas-backend:ephemeral
           envFrom:
             - secretRef:
                 name: qirtaas-secrets
