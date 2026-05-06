@@ -112,6 +112,7 @@ spec:
                 response_code = "",
                 response = "",
                 level     = "at",
+                msg = "",
               }
             }
 
