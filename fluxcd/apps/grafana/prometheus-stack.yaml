@@ -37,6 +37,8 @@ spec:
     grafana:
       grafana.ini:
         domain: "grafana.intern.alrimaal.com"
+        server:
+          root_url: "https://grafana.intern.alrimaal.com"
         database:
           type: mysql
           host: percona-xtradb-pxc-db-haproxy.mysql.svc.cluster.local
