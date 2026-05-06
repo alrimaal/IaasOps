@@ -36,6 +36,7 @@ spec:
                   storage: 1Gi
     grafana:
       grafana.ini:
+        root_url: "https://grafana.intern.alrimaal.com"
         database:
           type: mysql
           host: percona-xtradb-pxc-db-haproxy.mysql.svc.cluster.local
