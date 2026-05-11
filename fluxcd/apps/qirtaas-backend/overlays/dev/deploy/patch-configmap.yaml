@@ -9,3 +9,6 @@ data:
   QURAN_OAUTH_TOKEN_URL: "https://prelive-oauth2.quran.foundation/oauth2/token"
   QURAN_OAUTH_REDIRECT_URI: "https://qirtaasdev.alrimaal.com/oauth/quran/callback"
   QURAN_POST_API_BASE_URL: "https://apis-prelive.quran.foundation/quran-reflect/v1"
+  MINIO_SECURE: "True"
+  MINIO_ENDPOINT: "minio.alrimaal.com"
+  MINIO_BUCKET_NAME: "qirtaas-dev"

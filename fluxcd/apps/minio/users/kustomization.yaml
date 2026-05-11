@@ -11,3 +11,4 @@ resources:
   - caas.yaml
   - bunny-prod.yaml
   - qirtaas.yaml
+  - qirtaas-dev.yaml

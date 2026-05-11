@@ -67,6 +67,9 @@ module "talos" {
               - rbind
               - rshared
               - rw
+        extraConfig:
+          imageGCHighThresholdPercent: 60
+          imageGCLowThresholdPercent: 40
     EOT
   ]
 

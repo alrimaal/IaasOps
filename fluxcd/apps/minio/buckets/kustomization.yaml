@@ -8,3 +8,4 @@ resources:
   - loki-admin.yaml
   - loki-ruler.yaml
   - qirtaas.yaml
+  - qirtaas-dev.yaml

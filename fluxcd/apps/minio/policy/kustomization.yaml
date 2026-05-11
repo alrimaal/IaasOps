@@ -21,3 +21,5 @@ resources:
   - caas-bunny-prod-policy-binding.yaml
   - qirtaas.yaml
   - qirtaas-policy-binding.yaml
+  - qirtaas-dev.yaml
+  - qirtaas-dev-policy-binding.yaml
