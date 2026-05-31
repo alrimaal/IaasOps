@@ -6,6 +6,7 @@ resources:
   - percona/
   - minio/
   - caas-frontend/overlays/prod/
+  - caas-frontend/overlays/dev/
   - image-automation/
   - qirtaas-frontend/overlays/prod/
   - qirtaas-frontend/overlays/dev/

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: caas-frontend-config
+  namespace: default
+data:
+  LOGIN_ENABLED: "true"
+  API_URL: "https://bunyaandev.alrimaal.com/api"
+  MIXPANEL_TOKEN: "3f107eb2a389318cd8f17d40c735d179"
