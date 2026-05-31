@@ -23,7 +23,15 @@ spec:
     - qirtaasbackend.alrimaal.com
     - alrimaal.com
   rules:
-    - filters:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /.well-known/acme-challenge/
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      filters:
         - type: RequestRedirect
           requestRedirect:
             scheme: "https"
