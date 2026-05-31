@@ -12,6 +12,7 @@ resources:
   - caas-frontend-http.yaml
   - caas-backend-http.yaml
   - caas-backend-dev-http.yaml
+  - caas-frontend-dev-http.yaml
   - qirtaas-frontend-http.yaml
   - qirtaas-backend-http.yaml
   - qirtaas-frontend-dev-http.yaml
