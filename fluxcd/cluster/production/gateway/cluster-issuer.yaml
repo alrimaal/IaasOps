@@ -15,4 +15,3 @@ spec:
               - name: default-gateway
                 namespace: cilium-gateway
                 kind: Gateway
-                sectionName: http
