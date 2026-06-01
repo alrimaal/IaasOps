@@ -10,7 +10,7 @@ spec:
       name: letsencrypt-gateway-account-key
     solvers:
       - dns01:
-        cloudflare:
-          apiTokenSecretRef:
-            name: cloudflare-token-secrets
-            key: api-token
+          cloudflare:
+            apiTokenSecretRef:
+              name: cloudflare-token-secrets
+              key: api-token
