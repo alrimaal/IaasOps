@@ -23,18 +23,9 @@ spec:
     - qirtaasbackend.alrimaal.com
     - alrimaal.com
   rules:
-    - matches:
-        - path:
-            type: PathPrefix
-            value: / # catch everything
-      filters:
+    - filters:
         - type: RequestRedirect
           requestRedirect:
-            scheme: https
+            scheme: "https"
             port: 443
             statusCode: 301
-      # Exclude ACME challenges — this rule takes precedence if placed before broader ones
-    - matches:
-        - path:
-            type: PathPrefix
-            value: /.well-known/acme-challenge/

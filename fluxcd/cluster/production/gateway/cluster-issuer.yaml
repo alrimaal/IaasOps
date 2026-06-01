@@ -9,9 +9,8 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-gateway-account-key
     solvers:
-      - http01:
-          gatewayHTTPRoute:
-            parentRefs:
-              - name: default-gateway
-                namespace: cilium-gateway
-                kind: Gateway
+      - dns01:
+        cloudflare:
+          apiTokenSecretRef:
+            name: cloudflare-token-secrets
+            key: api-token
