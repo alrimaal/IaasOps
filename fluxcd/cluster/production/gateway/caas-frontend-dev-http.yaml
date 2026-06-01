@@ -9,7 +9,7 @@ spec:
       namespace: cilium-gateway
       sectionName: https
   hostnames:
-    - "bunyaanalpha.alrimaal.com"
+    - "bunyaanalpha1.alrimaal.com"
   rules:
     - backendRefs:
         - name: caas-frontend
