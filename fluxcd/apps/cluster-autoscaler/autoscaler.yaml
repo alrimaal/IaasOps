@@ -1,0 +1,37 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cluster-autoscaler
+  namespace: kube-system
+spec:
+  interval: 5m
+  releaseName: cluster-autoscaler
+  chart:
+    spec:
+      chart: cluster-autoscaler
+      version: "9.*"
+      sourceRef:
+        kind: HelmRepository
+        name: cluster-autoscaler-charts
+        namespace: flux-system
+  values:
+    cloudProvider: hetzner
+    image:
+      # Match kubernetes_version (1.30.3) in terraform/k8s.tf
+      tag: v1.30.3
+    # Secret created by Terraform (terraform/autoscaler.tf): carries
+    # HCLOUD_TOKEN / HCLOUD_CLUSTER_CONFIG / HCLOUD_NETWORK / HCLOUD_FIREWALL.
+    envFromSecret: cluster-autoscaler-hcloud
+    autoscalingGroups:
+      # name must match the nodeConfigs key in HCLOUD_CLUSTER_CONFIG.
+      # Renders --nodes=0:5:cx33:hel1:cx33-hel1
+      - name: cx33-hel1
+        instanceType: cx33
+        region: hel1
+        minSize: 0
+        maxSize: 5
+    extraArgs:
+      balance-similar-node-groups: true
+      scale-down-unneeded-time: 5m
+      scale-down-delay-after-add: 5m
+    priorityClassName: system-cluster-critical

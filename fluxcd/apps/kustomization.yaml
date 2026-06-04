@@ -12,3 +12,4 @@ resources:
   - qirtaas-frontend/overlays/dev/
   - elasticsearch/
   - alrimaal-frontend/
+  - cluster-autoscaler/
