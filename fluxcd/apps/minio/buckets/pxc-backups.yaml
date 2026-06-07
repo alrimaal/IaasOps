@@ -5,6 +5,15 @@ metadata:
   namespace: minio
 spec:
   deletionPolicy: IfEmpty
+  lifecycle:
+    Rules:
+      - ID: expire-objects-after-30-days
+        Status: Enabled
+        Filter:
+          Prefix: ""
+        Expiration:
+          Days: 4
+
   name: pxc-backups
   tenantRef:
     namespace: minio-tenant
