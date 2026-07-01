@@ -8,3 +8,4 @@ data:
   MINIO_BUCKET_NAME: "caas-dev"
   KUBERNETES_NAMESPACE: "dev"
   CDN_BASE_URL: "bunyaan"
+  QIRTAAS_API_URL: "https://qirtaasbackend.alrimaal.com"

@@ -7,3 +7,4 @@ data:
   MINIO_BUCKET_NAME: "caas"
   KUBERNETES_NAMESPACE: "default"
   CDN_BASE_URL: "bunyaanprod"
+  QIRTAAS_API_URL: "https://api.qirtaas.io"

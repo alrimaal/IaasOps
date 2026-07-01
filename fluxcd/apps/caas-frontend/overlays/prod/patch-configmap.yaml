@@ -7,3 +7,4 @@ data:
   LOGIN_ENABLED: "true"
   API_URL: "https://api.bunyaan.space/api"
   MIXPANEL_TOKEN: "8eaf7533ac6465dffa802012d29ec378"
+  QIRTAAS_API_URL: "https://api.qirtaas.io"
