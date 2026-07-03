@@ -12,7 +12,7 @@ spec:
         Filter:
           Prefix: ""
         Expiration:
-          Days: 7
+          Days: 3
 
   name: pxc-backups
   tenantRef:
