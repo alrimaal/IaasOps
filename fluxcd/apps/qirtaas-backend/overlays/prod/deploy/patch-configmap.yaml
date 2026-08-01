@@ -20,3 +20,4 @@ data:
   AUTOMATIC_EMAILS_ENABLED: "True"
   RENDER_JOB_NAMESPACE: "default"
   RENDER_FRONTEND_ORIGIN: "https://qirtaas.io"
+  RENDER_IMAGE: "ghcr.io/alrimaal/qirtaas-render:latest"
