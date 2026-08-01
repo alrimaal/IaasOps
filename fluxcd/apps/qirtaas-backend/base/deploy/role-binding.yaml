@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: qirtaas-export-job-creator
+  namespace: default
+subjects:
+  - kind: ServiceAccount
+    name: qirtaas-backend
+roleRef:
+  kind: Role
+  name: job-creator
+  apiGroup: rbac.authorization.k8s.io
