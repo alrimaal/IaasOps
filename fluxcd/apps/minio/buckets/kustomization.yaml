@@ -9,3 +9,4 @@ resources:
   - loki-ruler.yaml
   - qirtaas.yaml
   - qirtaas-dev.yaml
+  - qirtaas-ephemeral.yaml

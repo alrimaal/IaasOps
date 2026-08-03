@@ -1,0 +1,19 @@
+apiVersion: bfiola.dev/v1
+kind: MinioBucket
+metadata:
+  name: qirtaas-ephemeral
+  namespace: minio
+spec:
+  deletionPolicy: IfEmpty
+  lifecycle:
+    Rules:
+      - ID: expire-objects-after-30-days
+        Status: Enabled
+        Filter:
+          Prefix: ""
+        Expiration:
+          Days: 3
+  name: qirtaas-ephemeral
+  tenantRef:
+    namespace: minio-tenant
+    name: myminio

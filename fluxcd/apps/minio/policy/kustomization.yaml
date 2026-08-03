@@ -23,3 +23,5 @@ resources:
   - qirtaas-policy-binding.yaml
   - qirtaas-dev.yaml
   - qirtaas-dev-policy-binding.yaml
+  - qirtaas-ephemeral.yaml
+  - qirtaas-ephemeral-policy-binding.yaml
