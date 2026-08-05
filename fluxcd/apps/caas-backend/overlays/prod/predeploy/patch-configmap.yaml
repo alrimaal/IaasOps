@@ -8,7 +8,5 @@ data:
   KUBERNETES_NAMESPACE: "default"
   CDN_BASE_URL: "bunyaanprod"
   QIRTAAS_API_URL: "https://api.qirtaas.io"
-  RENDER_JOB_NAMESPACE: "default"
   RENDER_FRONTEND_ORIGIN: "https://qirtaas.io"
-  RENDER_IMAGE: "ghcr.io/alrimaal/qirtaas-render:latest"
   MINIO_EXPORT_BUCKET_NAME: "qirtaas-ephemeral"

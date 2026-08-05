@@ -12,7 +12,5 @@ data:
   MINIO_SECURE: "True"
   MINIO_ENDPOINT: "minio.alrimaal.com"
   MINIO_BUCKET_NAME: "qirtaas-dev"
-  RENDER_JOB_NAMESPACE: "dev"
   RENDER_FRONTEND_ORIGIN: "https://qirtaasdev.alrimaal.com"
-  RENDER_IMAGE: "ghcr.io/alrimaal/qirtaas-render:ephemeral"
   MINIO_EXPORT_BUCKET_NAME: "qirtaas-dev"
