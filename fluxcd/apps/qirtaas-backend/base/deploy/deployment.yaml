@@ -18,8 +18,6 @@ spec:
     metadata:
       labels:
         app: qirtaas-backend
-    spec:
-      serviceAccountName: qirtaas-backend
       containers:
         - name: qirtaas-backend
           imagePullPolicy: Always
