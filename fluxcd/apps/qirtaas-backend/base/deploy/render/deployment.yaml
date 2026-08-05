@@ -1,0 +1,26 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qirtaas-render
+  namespace: default
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: qirtaas-render
+  template:
+    metadata:
+      labels:
+        app: qirtaas-render
+    spec:
+      containers:
+        - name: qirtaas-render
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: ghcr-secrets

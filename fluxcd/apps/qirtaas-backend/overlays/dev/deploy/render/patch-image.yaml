@@ -1,0 +1,18 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qirtaas-render
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: qirtaas-render
+          image: ghcr.io/alrimaal/qirtaas-render:ephemeral
+          envFrom:
+            - secretRef:
+                name: qirtaas-secrets
+            - configMapRef:
+                name: qirtaas-config
