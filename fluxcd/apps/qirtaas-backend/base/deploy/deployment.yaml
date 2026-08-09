@@ -23,5 +23,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
+    spec:
       imagePullSecrets:
         - name: ghcr-secrets
