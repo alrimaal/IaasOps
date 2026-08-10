@@ -13,4 +13,4 @@ data:
   MINIO_ENDPOINT: "minio.alrimaal.com"
   MINIO_BUCKET_NAME: "qirtaas-dev"
   RENDER_FRONTEND_ORIGIN: "https://qirtaasdev.alrimaal.com"
-  MINIO_EXPORT_BUCKET_NAME: "qirtaas-dev"
+  MINIO_EPHEMERAL_BUCKET_NAME: "qirtaas-dev"

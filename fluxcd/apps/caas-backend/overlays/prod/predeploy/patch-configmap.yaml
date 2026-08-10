@@ -9,4 +9,4 @@ data:
   CDN_BASE_URL: "bunyaanprod"
   QIRTAAS_API_URL: "https://api.qirtaas.io"
   RENDER_FRONTEND_ORIGIN: "https://qirtaas.io"
-  MINIO_EXPORT_BUCKET_NAME: "qirtaas-ephemeral"
+  MINIO_EPHEMERAL_BUCKET_NAME: "qirtaas-ephemeral"
