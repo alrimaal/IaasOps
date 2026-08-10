@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - ../../../base/deploy
   - ../../../base/deploy/background
+  - render/
 
 patches:
   - path: patch-configmap.yaml
