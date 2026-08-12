@@ -19,3 +19,4 @@ data:
   MARKETING_EMAIL_DELAY_DAYS: "5"
   AUTOMATIC_EMAILS_ENABLED: "True"
   RENDER_FRONTEND_ORIGIN: "https://qirtaas.io"
+  MINIO_EPHEMERAL_BUCKET_NAME: "qirtaas-ephemeral"
