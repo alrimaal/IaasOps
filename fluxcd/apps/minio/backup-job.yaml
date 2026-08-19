@@ -30,7 +30,7 @@ spec:
                       name: aws-secrets
                       key: secretKey
                 - name: DST_BUCKET_PREFIX
-                  value: "alrimaal-minio-"
+                  value: "alrimaal-minio-2"
               command: ["/bin/sh", "-lc"]
               args:
                 - |
