@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
         - name: qirtaas-background
-          image: ghcr.io/alrimaal/qirtaas-background:0.1.3 # {"$imagepolicy": "default:qirtaas-background"}
+          image: ghcr.io/alrimaal/qirtaas-background:0.1.4 # {"$imagepolicy": "default:qirtaas-background"}
           envFrom:
             - configMapRef:
                 name: qirtaas-config
