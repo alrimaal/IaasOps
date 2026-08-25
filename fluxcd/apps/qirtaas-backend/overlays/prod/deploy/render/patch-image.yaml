@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: qirtaas-render
-          image: ghcr.io/alrimaal/qirtaas-render:0.1.4 # {"$imagepolicy": "default:qirtaas-render"}
+          image: ghcr.io/alrimaal/qirtaas-render:0.1.5 # {"$imagepolicy": "default:qirtaas-render"}
           envFrom:
             - secretRef:
                 name: qirtaas-secrets
