@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
         - name: qirtaas-db-migration
-          image: ghcr.io/alrimaal/qirtaas-backend:0.1.5 # {"$imagepolicy": "default:qirtaas-backend"}
+          image: ghcr.io/alrimaal/qirtaas-backend:0.1.6 # {"$imagepolicy": "default:qirtaas-backend"}
           command: ["python", "manage.py", "migrate", "--noinput"]
           envFrom:
             - secretRef:
