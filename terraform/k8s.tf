@@ -1,6 +1,6 @@
 module "talos" {
   source  = "hcloud-talos/talos/hcloud"
-  version = "2.21.0"
+  version = "3.4.15"
 
   # Use versions compatible with each other and supported by the module/Talos
   talos_version             = "v1.10.0"
@@ -11,13 +11,12 @@ module "talos" {
 
   hcloud_token = data.bitwarden_secret.hcloud_token.value
 
-  cluster_name    = "cluster"
-  cluster_domain  = "cluster.local"
-  cluster_prefix  = true
-  datacenter_name = "hel1-dc2"
+  cluster_name   = "cluster"
+  cluster_domain = "cluster.local"
+  cluster_prefix = true
+  location_name  = "hel1"
 
-  output_mode_config_cluster_endpoint = "public_ip"
-  firewall_use_current_ip             = true
+  firewall_use_current_ip = true
   extra_firewall_rules = [
     {
       direction   = "in"
@@ -32,17 +31,32 @@ module "talos" {
   enable_alias_ip    = true
 
 
-  control_plane_count       = 3
-  control_plane_server_type = "cx23"
+  control_plane_nodes = [
+    {
+      id   = 1,
+      type = "cx23"
+    },
+    {
+      id   = 2,
+      type = "cx23"
+    },
+    {
+      id   = 3,
+      type = "cx23"
+    }
+  ]
 
   worker_nodes = [
     {
+      id   = 1,
       type = "cx33"
     },
     {
+      id   = 2,
       type = "cx33"
     },
     {
+      id   = 3,
       type = "cx33"
     },
   ]
