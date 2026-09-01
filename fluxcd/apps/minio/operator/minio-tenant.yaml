@@ -44,7 +44,11 @@ spec:
                       - key: v1.min.io/tenant
                         operator: In
                         values:
-                          - minio-tenant
+                          - myminio
+                      - key: v1.min.io/pool
+                        operator: In
+                        values:
+                          - hot-pool
                   topologyKey: "kubernetes.io/hostname"
       certificate:
         requestAutoCert: false
