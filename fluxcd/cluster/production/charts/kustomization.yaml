@@ -9,3 +9,4 @@ resources:
   - minio-operator-ext-charts.yaml
   - grafana-charts.yaml
   - cluster-autoscaler-charts.yaml
+  - hcloud-csi-charts.yaml

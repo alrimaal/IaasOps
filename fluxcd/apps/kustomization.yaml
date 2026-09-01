@@ -13,3 +13,4 @@ resources:
   - elasticsearch/
   - alrimaal-frontend/
   - cluster-autoscaler/
+  - hcloud-csi/
