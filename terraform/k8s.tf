@@ -1,3 +1,20 @@
+locals {
+  talos_disk_encryption_patch = <<EOT
+    machine:
+      systemDiskEncryption:
+        ephemeral:
+          provider: luks2
+          keys:
+            - slot: 0
+              nodeID: {}
+        state:
+          provider: luks2
+          keys:
+            - slot: 0
+              nodeID: {}
+    EOT
+}
+
 module "talos" {
   source  = "hcloud-talos/talos/hcloud"
   version = "3.4.15"
@@ -68,7 +85,12 @@ module "talos" {
   pod_ipv4_cidr     = "10.0.16.0/20"
   service_ipv4_cidr = "10.0.8.0/21"
 
+  talos_control_plane_extra_config_patches = [
+    local.talos_disk_encryption_patch,
+  ]
+
   talos_worker_extra_config_patches = [
+    local.talos_disk_encryption_patch,
     <<EOT
     machine:
       kubelet:
