@@ -25,3 +25,9 @@ spec:
       - name: hcloud-volumes
         defaultStorageClass: false
         reclaimPolicy: Retain
+      - name: hcloud-volumes-encrypted
+        defaultStorageClass: false
+        reclaimPolicy: Retain
+        extraParameters:
+          csi.storage.k8s.io/node-publish-secret-name: csi-encryption-secret
+          csi.storage.k8s.io/node-publish-secret-namespace: kube-system
