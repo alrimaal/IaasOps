@@ -17,25 +17,6 @@ spec:
     tenant:
       pools:
         - servers: 4
-          name: hot-pool
-          volumesPerServer: 1
-          storageClassName: "hcloud-volumes"
-          size: 20Gi
-          affinity:
-            podAntiAffinity:
-              requiredDuringSchedulingIgnoredDuringExecution:
-                - labelSelector:
-                    matchExpressions:
-                      - key: v1.min.io/tenant
-                        operator: In
-                        values:
-                          - myminio
-                      - key: v1.min.io/pool
-                        operator: In
-                        values:
-                          - hot-pool
-                  topologyKey: "kubernetes.io/hostname"
-        - servers: 4
           name: hot-pool-encrypted
           volumesPerServer: 1
           storageClassName: "hcloud-volumes-encrypted"
