@@ -39,15 +39,13 @@
 
 ## 📖 Overview
 
-IaasOps is the GitOps-aligned repository powering the infrastructure and deployments of [AlRimaal's](https://alrimaal.com) products. Since Alrimaal was launched a self-sustaining non-profit, the infrastructure had to be both lean and scalable from day 1. It's mostly comprised of open-source components self-hosted on raw Hetzner VMs with relatively low operational load and high availability.
-
-While a lot of companies have scalable and state of the art infra, the obvious option for most small/low-budget teams is to host on BigTech cloud. This repo serves as proof that hosting complex production-grade workloads using OSS tooling is possible with low to moderate operational overhead.
+GitOps repository powering the infrastructure behind our products. Designed to manage production-grade workloads and services on raw Hetzner machines with minimal operational load and cost-efficient scalability.
 
 **Highlights**
 
 - 🔄 **IaC end-to-end** — Terraform provisions Talos on Hetzner, Flux (GitOps) reconciles the entire platform from Git.
 - 🗄️ **HA data layer** — Replicated MySQL and MinIO with automatic recovery and backups.
-- 🔐 **Secure by default** — immutable Talos OS (no SSH), secrets SOPS-encrypted in Git, transparent in-cluster encryption via Cilium.
+- 🔐 **Secure** — immutable Talos OS (no SSH), secrets SOPS-encrypted in Git, transparent in-cluster encryption via Cilium.
 - 📈 **Scales on demand** — cluster-autoscaler provisions nodes only for burst `ffmpeg` jobs, with full observability through Prometheus, Grafana, and Loki.
 
 | Function              | Tooling                                                           |
@@ -62,16 +60,6 @@ While a lot of companies have scalable and state of the art infra, the obvious o
 | **Disaster Recovery** | Daily Percona snapshots to Minio. Minio rsync to AWS Deep Archive |
 
 ---
-
-## 🗺️ Architecture
-
-<!--
-  TODO: replace with the generated topology diagram.
-  Recommended: mingrammer/diagrams (Python) or D2 → render to docs/overview.svg → embed below.
--->
-<div align="center">
-  <img src="docs/overview.svg" alt="Overview" width="900">
-</div>
 
 ---
 
@@ -95,7 +83,7 @@ All infrastructure is provisioned using IaC. We use Terraform [hcloud-talos](htt
 
 All applications are provisioned and managed using FluxCD (GitOps). External applications are installed via Helm.
 
-For Internal applications:
+For Internal applications, everything is containerised:
 
 - We build them using Github actions triggered by a merge on main using their docker files.
 - ImageAutomation monitors new versions and commits them to this repo.
