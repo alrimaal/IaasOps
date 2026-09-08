@@ -37,16 +37,16 @@
 
 ---
 
-## 📖 Overview
+## Overview
 
 GitOps repository powering the infrastructure behind our products. Designed to manage production-grade workloads and services on raw Hetzner machines with minimal operational load and cost-efficient scalability.
 
 **Highlights**
 
-- 🔄 **IaC end-to-end** — Terraform provisions Talos on Hetzner, Flux (GitOps) reconciles the entire platform from Git.
-- 🗄️ **HA data layer** — Replicated MySQL and MinIO with automatic recovery and backups.
-- 🔐 **Secure** — immutable Talos OS (no SSH), secrets SOPS-encrypted in Git, transparent in-cluster encryption via Cilium.
-- 📈 **Scales on demand** — cluster-autoscaler provisions nodes only for burst `ffmpeg` jobs, with full observability through Prometheus, Grafana, and Loki.
+- **IaC end-to-end** — Terraform provisions Talos on Hetzner, Flux (GitOps) reconciles the entire platform from Git.
+- **HA data layer** — Replicated MySQL and MinIO with automatic recovery and backups.
+- **Secure** — immutable Talos OS (no SSH), secrets SOPS-encrypted in Git, transparent in-cluster encryption via Cilium.
+- **Scales on demand** — cluster-autoscaler provisions nodes only for burst `ffmpeg` jobs, with full observability through Prometheus, Grafana, and Loki.
 
 | Function              | Tooling                                                           |
 | --------------------- | ----------------------------------------------------------------- |
@@ -63,7 +63,7 @@ GitOps repository powering the infrastructure behind our products. Designed to m
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 .
@@ -75,7 +75,7 @@ GitOps repository powering the infrastructure behind our products. Designed to m
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 ### Provisioning
 
@@ -126,7 +126,7 @@ Since caas_backend spawns CPU-intensive ffmpeg video processing workloads using 
 
 ---
 
-## 🔐 Security
+## Security
 
 ### Secrets
 
