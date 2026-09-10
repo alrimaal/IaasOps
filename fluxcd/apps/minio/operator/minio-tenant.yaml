@@ -33,7 +33,7 @@ spec:
                       - key: v1.min.io/pool
                         operator: In
                         values:
-                          - hot-pool
+                          - hot-pool-encrypted
                   topologyKey: "kubernetes.io/hostname"
       certificate:
         requestAutoCert: false
