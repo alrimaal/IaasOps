@@ -15,3 +15,5 @@ data:
   MINIO_BUCKET_NAME: "qirtaas-dev"
   RENDER_FRONTEND_ORIGIN: "https://qirtaasdev.alrimaal.com"
   MINIO_EPHEMERAL_BUCKET_NAME: "qirtaas-dev"
+  QURAN_SYNC_OAUTH_TOKEN_URL: "https://oauth2.quran.foundation/oauth2/token"
+  QURAN_SYNC_API_BASE_URL: "https://apis.quran.foundation/content/api/v4"
