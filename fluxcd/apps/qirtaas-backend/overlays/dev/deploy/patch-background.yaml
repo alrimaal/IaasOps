@@ -2,17 +2,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: qirtaas-backend
+  name: qirtaas-background
   namespace: default
 spec:
-  replicas: 2
   template:
     spec:
       containers:
-        - name: qirtaas-backend
-          image: ghcr.io/alrimaal/qirtaas-backend:ephemeral
+        - name: qirtaas-background
+          image: ghcr.io/alrimaal/qirtaas-background:ephemeral
           envFrom:
-            - secretRef:
-                name: qirtaas-secrets
             - configMapRef:
                 name: qirtaas-config
+            - secretRef:
+                name: qirtaas-secrets

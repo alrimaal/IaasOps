@@ -10,3 +10,4 @@ namespace: dev
 patches:
   - path: patch-configmap.yaml
   - path: patch-image.yaml
+  - path: patch-background.yaml
