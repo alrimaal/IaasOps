@@ -21,3 +21,5 @@ data:
   AUTOMATIC_EMAILS_ENABLED: "True"
   RENDER_FRONTEND_ORIGIN: "https://qirtaas.io"
   MINIO_EPHEMERAL_BUCKET_NAME: "qirtaas-ephemeral"
+  QURAN_SYNC_OAUTH_TOKEN_URL: "https://oauth2.quran.foundation/oauth2/token"
+  QURAN_SYNC_API_BASE_URL: "https://apis.quran.foundation/content/api/v4"
