@@ -18,5 +18,5 @@ data:
   QURAN_SYNC_OAUTH_TOKEN_URL: "https://prelive-oauth2.quran.foundation/oauth2/token"
   QURAN_SYNC_API_BASE_URL: "https://apis-prelive.quran.foundation/content/api/v4"
   QF_ANALYTICS_ENABLED: "True"
-  QF_ANALYTICS_API_BASE_URL: "https://apis-prelive.quran.foundation/analytics/v1/events"
+  QF_ANALYTICS_API_BASE_URL: "https://apis-prelive.quran.foundation/analytics/v1/events:batch"
   QF_ANALYTICS_LOOKBACK_DAYS: "2"
