@@ -5,6 +5,7 @@ metadata:
   name: qirtaas-backend
   namespace: default
 spec:
+  replicas: 4
   template:
     spec:
       containers:
