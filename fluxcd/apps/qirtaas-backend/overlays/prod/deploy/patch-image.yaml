@@ -11,6 +11,9 @@ spec:
       containers:
         - name: qirtaas-backend
           image: ghcr.io/alrimaal/qirtaas-backend:0.2.5 # {"$imagepolicy": "default:qirtaas-backend"}
+          resources:
+            requests:
+              memory: "3Gi"
           envFrom:
             - secretRef:
                 name: qirtaas-secrets
