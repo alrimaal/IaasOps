@@ -13,7 +13,7 @@ spec:
           image: ghcr.io/alrimaal/qirtaas-backend:0.2.7 # {"$imagepolicy": "default:qirtaas-backend"}
           resources:
             requests:
-              memory: "5Gi"
+              memory: "1Gi"
           envFrom:
             - secretRef:
                 name: qirtaas-secrets
