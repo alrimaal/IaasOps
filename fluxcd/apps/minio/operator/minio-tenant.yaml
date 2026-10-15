@@ -8,13 +8,17 @@ spec:
   chart:
     spec:
       chart: tenant
-      version: "7.1.*"
+      version: "7.1.1"
       sourceRef:
         kind: HelmRepository
         name: minio-charts
         namespace: flux-system
   values:
     tenant:
+      image:
+        repository: docker.io/pgsty/minio
+        tag: RELEASE.2026-08-04T00-00-00Z
+        pullPolicy: IfNotPresent
       pools:
         - servers: 4
           name: hot-pool-encrypted
