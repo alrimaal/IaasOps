@@ -4,3 +4,4 @@ resources:
   - image-automation.yaml
   - image-policy.yaml
   - deployment.yaml
+  - service.yaml
