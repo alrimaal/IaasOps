@@ -5,6 +5,7 @@ resources:
   - ../../../base/deploy
   - ../../../base/deploy/background
   - render/
+  - collab/
 
 namespace: dev
 

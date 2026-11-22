@@ -1,0 +1,11 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: qirtaas-collab
+  namespace: default
+spec:
+  imageRepositoryRef:
+    name: qirtaas-collab
+  policy:
+    semver:
+      range: x.x.x

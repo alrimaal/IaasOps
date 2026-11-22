@@ -1,0 +1,26 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qirtaas-collab
+  namespace: default
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: qirtaas-collab
+  template:
+    metadata:
+      labels:
+        app: qirtaas-collab
+    spec:
+      containers:
+        - name: qirtaas-collab
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: ghcr-secrets
