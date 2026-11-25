@@ -20,3 +20,4 @@ data:
   QF_ANALYTICS_ENABLED: "True"
   QF_ANALYTICS_API_BASE_URL: "https://apis-prelive.quran.foundation/analytics/v1/events:batch"
   QF_ANALYTICS_LOOKBACK_DAYS: "5"
+  COLLAB_CREATE: "True"
