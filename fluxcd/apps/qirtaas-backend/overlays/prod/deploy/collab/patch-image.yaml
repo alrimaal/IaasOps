@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: qirtaas-collab
-          image: ghcr.io/alrimaal/qirtaas-collab:0.0.0 # {"$imagepolicy": "default:qirtaas-collab"}
+          image: ghcr.io/alrimaal/qirtaas-collab:0.6.74 # {"$imagepolicy": "default:qirtaas-collab"}
           envFrom:
             - secretRef:
                 name: qirtaas-collab-secrets-prod
