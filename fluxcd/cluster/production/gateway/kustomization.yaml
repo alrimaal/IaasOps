@@ -19,3 +19,4 @@ resources:
   - qirtaas-backend-dev-http.yaml
   - alrimaal-frontend-http.yaml
   - qirtaas-collab-dev-http.yaml
+  - qirtaas-collab-http.yaml
