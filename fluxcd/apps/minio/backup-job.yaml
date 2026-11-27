@@ -10,9 +10,23 @@ spec:
       template:
         spec:
           restartPolicy: OnFailure
+          volumes:
+            - name: bin
+              emptyDir: {}
+          initContainers:
+            - name: get-mc
+              image: ghcr.io/alrimaal/mc:RELEASE.2026-11-12T00-00-00Z
+              command: ["sh", "-c", "cp $(command -v mc || command -v mcli) /out/mc"]
+              volumeMounts:
+                - name: bin
+                  mountPath: /out
           containers:
             - name: mc
               image: alpine:3.20
+              volumeMounts:
+                - name: bin
+                  mountPath: /usr/local/bin/mc
+                  subPath: mc
               env:
                 - name: MINIO_SECRET_KEY
                   valueFrom:
@@ -35,9 +49,8 @@ spec:
               args:
                 - |
                   set -eu
-                  apk add --no-cache ca-certificates curl
-                  curl -sSL https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/local/bin/mc
-                  chmod +x /usr/local/bin/mc
+                  apk add --no-cache ca-certificates
+                  mc --version
                   mc alias set local http://myminio-hl.minio-tenant.svc.cluster.local:9000 Sneeze3204 $MINIO_SECRET_KEY
                   mc alias set s3 https://s3.amazonaws.com $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY
                   BUCKETS="$(mc ls local | awk '{print $5}' | sed 's:/$::' | grep -v 'loki' | tr '\n' ' ')"
