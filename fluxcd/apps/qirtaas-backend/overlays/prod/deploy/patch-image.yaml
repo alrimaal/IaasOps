@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: qirtaas-backend
-          image: ghcr.io/alrimaal/qirtaas-backend:0.2.11 # {"$imagepolicy": "default:qirtaas-backend"}
+          image: ghcr.io/alrimaal/qirtaas-backend:0.2.12 # {"$imagepolicy": "default:qirtaas-backend"}
           resources:
             requests:
               memory: "1Gi"
