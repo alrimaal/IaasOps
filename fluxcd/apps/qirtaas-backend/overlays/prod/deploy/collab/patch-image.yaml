@@ -1,0 +1,16 @@
+# app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qirtaas-collab
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: qirtaas-collab
+          image: ghcr.io/alrimaal/qirtaas-collab:ephemeral # TODO change after build
+          envFrom:
+            - secretRef:
+                name: qirtaas-collab-secrets-prod
