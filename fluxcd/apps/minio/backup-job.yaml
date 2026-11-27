@@ -15,8 +15,9 @@ spec:
               emptyDir: {}
           initContainers:
             - name: get-mc
-              image: ghcr.io/alrimaal/mc:RELEASE.2026-11-12T00-00-00Z
-              command: ["sh", "-c", "cp $(command -v mc || command -v mcli) /out/mc"]
+              image: ghcr.io/alrimaal/mc:release.2026-11-12t00-00-00z
+              command:
+                ["sh", "-c", "cp $(command -v mc || command -v mcli) /out/mc"]
               volumeMounts:
                 - name: bin
                   mountPath: /out
